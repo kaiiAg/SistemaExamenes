@@ -1,0 +1,7 @@
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\BLL\bin\Debug\BLL.dll
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\BLL\bin\Debug\BLL.pdb
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\BLL\bin\Debug\DAL.dll
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\BLL\bin\Debug\DAL.pdb
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\BLL\obj\Debug\BLL.dll
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\BLL\obj\Debug\BLL.pdb

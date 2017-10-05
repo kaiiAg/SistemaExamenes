@@ -1,0 +1,5 @@
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\DAL\bin\Debug\DAL.dll
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\DAL\bin\Debug\DAL.pdb
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\DAL\obj\Debug\DAL.dll
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\DAL\obj\Debug\DAL.pdb

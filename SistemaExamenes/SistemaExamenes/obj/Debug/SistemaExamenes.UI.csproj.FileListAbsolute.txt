@@ -1,0 +1,17 @@
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\SistemaExamenes.exe.config
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\SistemaExamenes.exe
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\SistemaExamenes.pdb
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\BLL.dll
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\DAL.dll
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\BLL.pdb
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\DAL.pdb
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.UI.csprojResolveAssemblyReference.cache
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Administrador.Pantalla_Principal_Admin.resources
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Login.resources
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Maestro.Pantalla_Principal_Maestro.resources
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Properties.Resources.resources
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.UI.csproj.GenerateResource.Cache
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.exe
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.pdb
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Alumnos.Pantalla_Principal_Alum.resources
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Administrador.Lista_Alumnos.resources
