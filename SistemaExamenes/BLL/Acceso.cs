@@ -47,6 +47,14 @@ namespace BLL
             get { return _Status; }
             set { _Status = value; }
         }
+
+        private string _Validacion;
+
+        public string Validacion
+        {
+            get { return _Validacion; }
+            set { _Validacion = value; }
+        }
         #endregion
 
         #region Variables Privadas
@@ -64,7 +72,7 @@ namespace BLL
             conexion = cls_DAL.trae_conexion("BDExamenes", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
-                sql = "SP_Error_Insert";
+                sql = "SP_ERROR_INSERT";
                 ParamStruct[] parametros = new ParamStruct[2];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
@@ -75,14 +83,14 @@ namespace BLL
             }
             else
             {
-                sql = "SP_Acceso";
+                sql = "SP_ACCESO";
                 ParamStruct[] parametros = new ParamStruct[2];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@usuario", SqlDbType.NVarChar, _LoginU);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@contraseña", SqlDbType.NVarChar, _Contra);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    sql = "SP_Error_Insert";
+                    sql = "SP_ERROR_INSERT";
                     ParamStruct[] parametross = new ParamStruct[2];
                     cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
                     cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);

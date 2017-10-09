@@ -15,3 +15,4 @@ K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\Si
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.pdb
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Alumnos.Pantalla_Principal_Alum.resources
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Administrador.Lista_Alumnos.resources
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Administrador.Lista_Maestros.resources
