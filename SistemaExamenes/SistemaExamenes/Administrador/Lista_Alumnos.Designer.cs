@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.dgv_Alumnos = new System.Windows.Forms.DataGridView();
@@ -45,7 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_Confirm_Contra = new System.Windows.Forms.TextBox();
             this.lb_Confirmacion = new System.Windows.Forms.Label();
@@ -56,6 +56,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lb_idAlumno = new System.Windows.Forms.Label();
+            this.txt_MaestroMan = new System.Windows.Forms.TextBox();
             this.btn_BuscarMan = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_NomBusque = new System.Windows.Forms.TextBox();
@@ -64,14 +66,10 @@
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.cb_GrupoMan = new System.Windows.Forms.ComboBox();
             this.cb_GradoMan = new System.Windows.Forms.ComboBox();
-            this.txt_ModiAlumno = new System.Windows.Forms.TextBox();
-            this.cb_MaestroMan = new System.Windows.Forms.ComboBox();
-            this.cb_UsuarioMan = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lb_idUsuario = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alumnos)).BeginInit();
@@ -95,6 +93,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.txt_Nombre);
             this.tabPage1.Controls.Add(this.btn_Buscar);
             this.tabPage1.Controls.Add(this.dgv_Alumnos);
@@ -105,30 +104,41 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista Alumnos";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(68, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 17);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Nombre:";
             // 
             // txt_Nombre
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(150, 35);
+            this.txt_Nombre.Location = new System.Drawing.Point(171, 35);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(144, 22);
             this.txt_Nombre.TabIndex = 2;
             // 
             // btn_Buscar
             // 
-            this.btn_Buscar.Location = new System.Drawing.Point(328, 29);
+            this.btn_Buscar.Location = new System.Drawing.Point(351, 29);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(81, 34);
             this.btn_Buscar.TabIndex = 1;
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // dgv_Alumnos
             // 
             this.dgv_Alumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Alumnos.Location = new System.Drawing.Point(6, 80);
+            this.dgv_Alumnos.Location = new System.Drawing.Point(22, 80);
             this.dgv_Alumnos.Name = "dgv_Alumnos";
             this.dgv_Alumnos.RowTemplate.Height = 24;
-            this.dgv_Alumnos.Size = new System.Drawing.Size(735, 322);
+            this.dgv_Alumnos.Size = new System.Drawing.Size(530, 322);
             this.dgv_Alumnos.TabIndex = 0;
             // 
             // tabPage2
@@ -155,10 +165,9 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(361, 20);
+            this.panel2.Location = new System.Drawing.Point(280, 20);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(367, 373);
+            this.panel2.Size = new System.Drawing.Size(282, 373);
             this.panel2.TabIndex = 3;
             // 
             // txt_IDUsuario
@@ -168,6 +177,7 @@
             this.txt_IDUsuario.Name = "txt_IDUsuario";
             this.txt_IDUsuario.Size = new System.Drawing.Size(170, 22);
             this.txt_IDUsuario.TabIndex = 6;
+            this.txt_IDUsuario.Visible = false;
             // 
             // btn_Registrar
             // 
@@ -256,15 +266,6 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Maestro:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Usuario:";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txt_Confirm_Contra);
@@ -276,7 +277,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(6, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 373);
+            this.panel1.Size = new System.Drawing.Size(268, 373);
             this.panel1.TabIndex = 2;
             // 
             // txt_Confirm_Contra
@@ -284,7 +285,7 @@
             this.txt_Confirm_Contra.Location = new System.Drawing.Point(94, 204);
             this.txt_Confirm_Contra.Name = "txt_Confirm_Contra";
             this.txt_Confirm_Contra.PasswordChar = '*';
-            this.txt_Confirm_Contra.Size = new System.Drawing.Size(179, 22);
+            this.txt_Confirm_Contra.Size = new System.Drawing.Size(157, 22);
             this.txt_Confirm_Contra.TabIndex = 4;
             this.txt_Confirm_Contra.Visible = false;
             // 
@@ -300,7 +301,7 @@
             // 
             // btn_Crear
             // 
-            this.btn_Crear.Location = new System.Drawing.Point(124, 249);
+            this.btn_Crear.Location = new System.Drawing.Point(119, 250);
             this.btn_Crear.Name = "btn_Crear";
             this.btn_Crear.Size = new System.Drawing.Size(99, 47);
             this.btn_Crear.TabIndex = 5;
@@ -313,7 +314,7 @@
             this.txt_Contraseña.Location = new System.Drawing.Point(94, 130);
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.PasswordChar = '*';
-            this.txt_Contraseña.Size = new System.Drawing.Size(179, 22);
+            this.txt_Contraseña.Size = new System.Drawing.Size(157, 22);
             this.txt_Contraseña.TabIndex = 3;
             this.txt_Contraseña.TextChanged += new System.EventHandler(this.txt_Contraseña_TextChanged);
             // 
@@ -321,7 +322,7 @@
             // 
             this.txt_Usuario.Location = new System.Drawing.Point(94, 82);
             this.txt_Usuario.Name = "txt_Usuario";
-            this.txt_Usuario.Size = new System.Drawing.Size(179, 22);
+            this.txt_Usuario.Size = new System.Drawing.Size(157, 22);
             this.txt_Usuario.TabIndex = 2;
             // 
             // label1
@@ -354,6 +355,9 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lb_idUsuario);
+            this.panel3.Controls.Add(this.lb_idAlumno);
+            this.panel3.Controls.Add(this.txt_MaestroMan);
             this.panel3.Controls.Add(this.btn_BuscarMan);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.txt_NomBusque);
@@ -362,32 +366,45 @@
             this.panel3.Controls.Add(this.btn_Modificar);
             this.panel3.Controls.Add(this.cb_GrupoMan);
             this.panel3.Controls.Add(this.cb_GradoMan);
-            this.panel3.Controls.Add(this.txt_ModiAlumno);
-            this.panel3.Controls.Add(this.cb_MaestroMan);
-            this.panel3.Controls.Add(this.cb_UsuarioMan);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(190, 22);
+            this.panel3.Location = new System.Drawing.Point(19, 21);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(397, 377);
             this.panel3.TabIndex = 4;
             // 
+            // lb_idAlumno
+            // 
+            this.lb_idAlumno.AutoSize = true;
+            this.lb_idAlumno.Location = new System.Drawing.Point(48, 125);
+            this.lb_idAlumno.Name = "lb_idAlumno";
+            this.lb_idAlumno.Size = new System.Drawing.Size(54, 17);
+            this.lb_idAlumno.TabIndex = 17;
+            this.lb_idAlumno.Text = "label12";
+            this.lb_idAlumno.Visible = false;
+            // 
+            // txt_MaestroMan
+            // 
+            this.txt_MaestroMan.Location = new System.Drawing.Point(126, 170);
+            this.txt_MaestroMan.Name = "txt_MaestroMan";
+            this.txt_MaestroMan.Size = new System.Drawing.Size(170, 22);
+            this.txt_MaestroMan.TabIndex = 16;
+            // 
             // btn_BuscarMan
             // 
-            this.btn_BuscarMan.Location = new System.Drawing.Point(302, 14);
+            this.btn_BuscarMan.Location = new System.Drawing.Point(302, 72);
             this.btn_BuscarMan.Name = "btn_BuscarMan";
-            this.btn_BuscarMan.Size = new System.Drawing.Size(65, 44);
+            this.btn_BuscarMan.Size = new System.Drawing.Size(65, 33);
             this.btn_BuscarMan.TabIndex = 15;
             this.btn_BuscarMan.Text = "Buscar";
             this.btn_BuscarMan.UseVisualStyleBackColor = true;
+            this.btn_BuscarMan.Click += new System.EventHandler(this.btn_BuscarMan_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(37, 28);
+            this.label13.Location = new System.Drawing.Point(45, 82);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 17);
             this.label13.TabIndex = 14;
@@ -395,7 +412,7 @@
             // 
             // txt_NomBusque
             // 
-            this.txt_NomBusque.Location = new System.Drawing.Point(126, 23);
+            this.txt_NomBusque.Location = new System.Drawing.Point(126, 77);
             this.txt_NomBusque.Name = "txt_NomBusque";
             this.txt_NomBusque.Size = new System.Drawing.Size(170, 22);
             this.txt_NomBusque.TabIndex = 13;
@@ -408,6 +425,7 @@
             this.btn_Limpiar.TabIndex = 12;
             this.btn_Limpiar.Text = "Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = true;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Eliminar
             // 
@@ -417,6 +435,7 @@
             this.btn_Eliminar.TabIndex = 11;
             this.btn_Eliminar.Text = "Eliminar Registro";
             this.btn_Eliminar.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // btn_Modificar
             // 
@@ -426,14 +445,14 @@
             this.btn_Modificar.TabIndex = 10;
             this.btn_Modificar.Text = "Modificar Registro";
             this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // cb_GrupoMan
             // 
             this.cb_GrupoMan.FormattingEnabled = true;
             this.cb_GrupoMan.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
+            "Mañana",
+            "Tarde"});
             this.cb_GrupoMan.Location = new System.Drawing.Point(126, 258);
             this.cb_GrupoMan.Name = "cb_GrupoMan";
             this.cb_GrupoMan.Size = new System.Drawing.Size(170, 24);
@@ -443,39 +462,16 @@
             // 
             this.cb_GradoMan.FormattingEnabled = true;
             this.cb_GradoMan.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.cb_GradoMan.Location = new System.Drawing.Point(126, 219);
+            "Primero",
+            "Segundo",
+            "Tercero",
+            "Cuarto",
+            "Quinto",
+            "Sexto"});
+            this.cb_GradoMan.Location = new System.Drawing.Point(126, 212);
             this.cb_GradoMan.Name = "cb_GradoMan";
             this.cb_GradoMan.Size = new System.Drawing.Size(170, 24);
             this.cb_GradoMan.TabIndex = 8;
-            // 
-            // txt_ModiAlumno
-            // 
-            this.txt_ModiAlumno.Location = new System.Drawing.Point(126, 169);
-            this.txt_ModiAlumno.Name = "txt_ModiAlumno";
-            this.txt_ModiAlumno.Size = new System.Drawing.Size(170, 22);
-            this.txt_ModiAlumno.TabIndex = 7;
-            // 
-            // cb_MaestroMan
-            // 
-            this.cb_MaestroMan.FormattingEnabled = true;
-            this.cb_MaestroMan.Location = new System.Drawing.Point(126, 121);
-            this.cb_MaestroMan.Name = "cb_MaestroMan";
-            this.cb_MaestroMan.Size = new System.Drawing.Size(170, 24);
-            this.cb_MaestroMan.TabIndex = 6;
-            // 
-            // cb_UsuarioMan
-            // 
-            this.cb_UsuarioMan.FormattingEnabled = true;
-            this.cb_UsuarioMan.Location = new System.Drawing.Point(126, 76);
-            this.cb_UsuarioMan.Name = "cb_UsuarioMan";
-            this.cb_UsuarioMan.Size = new System.Drawing.Size(170, 24);
-            this.cb_UsuarioMan.TabIndex = 5;
             // 
             // label8
             // 
@@ -489,38 +485,30 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(57, 219);
+            this.label9.Location = new System.Drawing.Point(58, 215);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 17);
             this.label9.TabIndex = 3;
             this.label9.Text = "Grado:";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(56, 169);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 17);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Nombre:";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(56, 121);
+            this.label11.Location = new System.Drawing.Point(47, 170);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 17);
             this.label11.TabIndex = 1;
             this.label11.Text = "Maestro:";
             // 
-            // label12
+            // lb_idUsuario
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(58, 76);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 17);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Usuario:";
+            this.lb_idUsuario.AutoSize = true;
+            this.lb_idUsuario.Location = new System.Drawing.Point(143, 125);
+            this.lb_idUsuario.Name = "lb_idUsuario";
+            this.lb_idUsuario.Size = new System.Drawing.Size(46, 17);
+            this.lb_idUsuario.TabIndex = 18;
+            this.lb_idUsuario.Text = "label3";
+            this.lb_idUsuario.Visible = false;
             // 
             // Lista_Alumnos
             // 
@@ -566,7 +554,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Crear;
         private System.Windows.Forms.TextBox txt_Contraseña;
@@ -578,14 +565,9 @@
         private System.Windows.Forms.Button btn_Modificar;
         private System.Windows.Forms.ComboBox cb_GrupoMan;
         private System.Windows.Forms.ComboBox cb_GradoMan;
-        private System.Windows.Forms.TextBox txt_ModiAlumno;
-        private System.Windows.Forms.ComboBox cb_MaestroMan;
-        private System.Windows.Forms.ComboBox cb_UsuarioMan;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_BuscarMan;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_NomBusque;
@@ -594,5 +576,9 @@
         private System.Windows.Forms.TextBox txt_Confirm_Contra;
         private System.Windows.Forms.Label lb_Confirmacion;
         private System.Windows.Forms.TextBox txt_IDUsuario;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_MaestroMan;
+        private System.Windows.Forms.Label lb_idAlumno;
+        private System.Windows.Forms.Label lb_idUsuario;
     }
 }

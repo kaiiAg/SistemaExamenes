@@ -24,8 +24,11 @@ namespace SistemaExamenes.Administrador
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Lista_Alumnos list_alum = new Lista_Alumnos();
-            list_alum.Show();
+
+            Lista_Maestros list_maes = new Lista_Maestros();
+            list_maes.Show();
+
+            
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,8 +48,8 @@ namespace SistemaExamenes.Administrador
 
         private void maestrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Lista_Maestros list_maes = new Lista_Maestros();
-            list_maes.Show();
+            Lista_Alumnos list_alum = new Lista_Alumnos();
+            list_alum.Show();
         }
     }
 }

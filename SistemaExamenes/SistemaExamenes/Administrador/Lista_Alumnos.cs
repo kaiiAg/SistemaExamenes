@@ -14,6 +14,7 @@ namespace SistemaExamenes.Administrador
     public partial class Lista_Alumnos : Form
     {
         Administracion admin = new Administracion();
+        
         public Lista_Alumnos()
         {
             InitializeComponent();
@@ -53,7 +54,9 @@ namespace SistemaExamenes.Administrador
                     MessageBox.Show("Usuario Insertado Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txt_IDUsuario.Text = Convert.ToString(admin.ID);
                     LIMPIAR();
-                   
+                    lb_Confirmacion.Visible = false;
+                    txt_Confirm_Contra.Visible = false;
+
                 }
             }
             else
@@ -81,7 +84,31 @@ namespace SistemaExamenes.Administrador
         }
         private void Lista_Alumnos_Load(object sender, EventArgs e)
         {
+            CARGAR_ALUMNOS();
 
+            //txt_Nombre.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //txt_Nombre.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //AutoCompleteStringCollection DataCollection = new AutoCompleteStringCollection();
+            //addItems(DataCollection);
+            //txt_Nombre.AutoCompleteCustomSource = DataCollection;
+
+        }
+
+        //public void addItems(AutoCompleteStringCollection col)
+        //{
+
+        //    foreach (var alumno in dgv_Alumnos)
+        //    {
+        //        col.Add(alumno);
+
+
+        //    }
+
+        //}
+
+        public void CARGAR_ALUMNOS()
+        {
+            dgv_Alumnos.DataSource = admin.CARGA_ALUMNOS().Tables[0];
         }
 
         private void txt_Contraseña_TextChanged(object sender, EventArgs e)
@@ -157,6 +184,84 @@ namespace SistemaExamenes.Administrador
            //cb_Maestro.ValueMember = ds.Tables[0].Columns["Id_Rol"].ColumnName.ToString();
         }
 
-        
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            admin.Nombre = txt_Nombre.Text;
+            dgv_Alumnos.DataSource = admin.BUSQUEDA_ALUMNO().Tables[0];
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            CARGAR_ALUMNOS();
+        }
+
+        private void btn_BuscarMan_Click(object sender, EventArgs e)
+        {
+            admin.Nombre = txt_NomBusque.Text;
+            admin.MANTENIMIENTO_BUSQUEDA();
+            lb_idAlumno.Text = Convert.ToString(admin.IdAlumno);
+            lb_idUsuario.Text = Convert.ToString(admin.IdUsuario);
+            int idmaestro = admin.IdMaestro;
+            admin.ID = idmaestro;
+            admin.NOMBRE_MAESTRO();
+            txt_MaestroMan.Text = admin.NombreMaestro;
+            cb_GradoMan.Text = admin.Grado;
+            cb_GrupoMan.Text = admin.Grupo;
+            
+        }
+
+        public void LimpiarMantenimiento()
+        {
+            txt_NomBusque.Text = String.Empty;
+            txt_MaestroMan.Text = String.Empty;
+            cb_GradoMan.Text = String.Empty;
+            cb_GrupoMan.Text = String.Empty;
+        }
+
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarMantenimiento();
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            admin.NombreMaestro = txt_MaestroMan.Text;
+            admin.ID_MAESTRO();
+            int id = admin.ID;
+
+            admin.IdAlumno = Convert.ToInt32(lb_idAlumno.Text);
+            admin.Nombre = txt_NomBusque.Text;
+            admin.IdMaestro = id;
+            admin.Grado = cb_GradoMan.Text;
+            admin.Grupo = cb_GrupoMan.Text;
+            admin.UPDATE_ALUMNO();
+
+            if (admin.Validacion == "Actualizado")
+            {
+                MessageBox.Show("Informacion Actualizada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarMantenimiento();
+                
+
+            }
+
+
+        }
+
+        private void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            admin.IdAlumno = Convert.ToInt32(lb_idAlumno.Text);
+            admin.DELETE_ALUMNO();
+
+            if (admin.Validacion == "Eliminado")
+            {
+                MessageBox.Show("Informacion Borrada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarMantenimiento();
+                
+            }
+
+            admin.IdUsuario = Convert.ToInt32(lb_idUsuario.Text);
+            admin.DELETE_USER();
+
+        }
     }
 }
