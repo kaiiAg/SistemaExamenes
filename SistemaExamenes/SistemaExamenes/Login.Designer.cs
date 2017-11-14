@@ -28,82 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_Usuario = new System.Windows.Forms.TextBox();
-            this.txt_Contraseña = new System.Windows.Forms.TextBox();
-            this.btn_Ingresar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            this.txt_Usuario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txt_Contraseña = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.btn_Ingresar = new Bunifu.Framework.UI.BunifuImageButton();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Ingresar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 171);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña:";
             // 
             // txt_Usuario
             // 
-            this.txt_Usuario.Location = new System.Drawing.Point(152, 109);
+            this.txt_Usuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Usuario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Usuario.HintForeColor = System.Drawing.Color.Empty;
+            this.txt_Usuario.HintText = "Usuario";
+            this.txt_Usuario.isPassword = false;
+            this.txt_Usuario.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txt_Usuario.LineIdleColor = System.Drawing.Color.Gray;
+            this.txt_Usuario.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txt_Usuario.LineThickness = 3;
+            this.txt_Usuario.Location = new System.Drawing.Point(66, 72);
+            this.txt_Usuario.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_Usuario.Name = "txt_Usuario";
-            this.txt_Usuario.Size = new System.Drawing.Size(149, 22);
-            this.txt_Usuario.TabIndex = 2;
+            this.txt_Usuario.Size = new System.Drawing.Size(231, 33);
+            this.txt_Usuario.TabIndex = 5;
+            this.txt_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_Contraseña
             // 
-            this.txt_Contraseña.Location = new System.Drawing.Point(152, 165);
+            this.txt_Contraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Contraseña.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txt_Contraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Contraseña.HintForeColor = System.Drawing.Color.Empty;
+            this.txt_Contraseña.HintText = "";
+            this.txt_Contraseña.isPassword = true;
+            this.txt_Contraseña.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txt_Contraseña.LineIdleColor = System.Drawing.Color.Gray;
+            this.txt_Contraseña.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txt_Contraseña.LineThickness = 3;
+            this.txt_Contraseña.Location = new System.Drawing.Point(66, 156);
+            this.txt_Contraseña.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Contraseña.Name = "txt_Contraseña";
-            this.txt_Contraseña.PasswordChar = '*';
-            this.txt_Contraseña.Size = new System.Drawing.Size(149, 22);
-            this.txt_Contraseña.TabIndex = 3;
+            this.txt_Contraseña.Size = new System.Drawing.Size(231, 33);
+            this.txt_Contraseña.TabIndex = 6;
+            this.txt_Contraseña.Text = "Contraseña";
+            this.txt_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btn_Ingresar
             // 
-            this.btn_Ingresar.Location = new System.Drawing.Point(174, 226);
+            this.btn_Ingresar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_Ingresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ingresar.Image")));
+            this.btn_Ingresar.ImageActive = null;
+            this.btn_Ingresar.Location = new System.Drawing.Point(66, 266);
             this.btn_Ingresar.Name = "btn_Ingresar";
-            this.btn_Ingresar.Size = new System.Drawing.Size(84, 36);
-            this.btn_Ingresar.TabIndex = 4;
-            this.btn_Ingresar.Text = "Ingresar";
-            this.btn_Ingresar.UseVisualStyleBackColor = true;
+            this.btn_Ingresar.Size = new System.Drawing.Size(231, 57);
+            this.btn_Ingresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Ingresar.TabIndex = 7;
+            this.btn_Ingresar.TabStop = false;
+            this.btn_Ingresar.Zoom = 10;
             this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 349);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(348, 364);
             this.Controls.Add(this.btn_Ingresar);
             this.Controls.Add(this.txt_Contraseña);
             this.Controls.Add(this.txt_Usuario);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Ingresar)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_Usuario;
-        private System.Windows.Forms.TextBox txt_Contraseña;
-        private System.Windows.Forms.Button btn_Ingresar;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txt_Usuario;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txt_Contraseña;
+        private Bunifu.Framework.UI.BunifuImageButton btn_Ingresar;
     }
 }
 

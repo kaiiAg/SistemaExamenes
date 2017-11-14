@@ -16,5 +16,17 @@ namespace SistemaExamenes.Maestro
         {
             InitializeComponent();
         }
+
+        private void elaborarExamenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Elaborar_Examen frm = new Elaborar_Examen();
+            frm.Show();
+        }
+
+        private void calificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lista_Alumnos frm = new Lista_Alumnos();
+            frm.Show();
+        }
     }
 }

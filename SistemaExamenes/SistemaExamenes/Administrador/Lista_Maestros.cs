@@ -23,8 +23,10 @@ namespace SistemaExamenes.Administrador
         private void Lista_Maestros_Load(object sender, EventArgs e)
         {
             CARGAR_MAESTROS();
-            lb_Confirmacion.Visible = false;
+            pn_Registro.Visible = false;
             txt_ConfiContra.Visible = false;
+            lb_Confirmas.Visible = false;
+            pn_Crear.Visible = true;
         }
 
         public void CARGAR_MAESTROS()
@@ -77,8 +79,12 @@ namespace SistemaExamenes.Administrador
                     MessageBox.Show("Usuario Insertado Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txt_idUsuario.Text = Convert.ToString(admin.ID);
                     LIMPIAR();
-                    lb_Confirmacion.Visible = false;
+                    
                     txt_ConfiContra.Visible = false;
+                    lb_Confirmas.Visible = false;
+                    pn_Crear.Visible = false;
+                    pn_Registro.Visible = true;
+                    
 
                 }
             }
@@ -97,8 +103,9 @@ namespace SistemaExamenes.Administrador
 
         private void txt_Contraseña_TextChanged(object sender, EventArgs e)
         {
-            lb_Confirmacion.Visible = true;
+            
             txt_ConfiContra.Visible = true;
+            lb_Confirmas.Visible = true;
         }
 
         private void btn_Registrar_Click(object sender, EventArgs e)
@@ -127,6 +134,8 @@ namespace SistemaExamenes.Administrador
                 MessageBox.Show("Maestro Insertado Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LIMPIAR1();
+                pn_Registro.Visible = false;
+                pn_Crear.Visible = true;
 
             }
             else

@@ -32,8 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +61,12 @@
     </Compile>
     <Compile Include="Administrador\Lista_Maestros.Designer.cs">
       <DependentUpon>Lista_Maestros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Lista_Materias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\Lista_Materias.Designer.cs">
+      <DependentUpon>Lista_Materias.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrador\Pantalla_Principal_Admin.cs">
       <SubType>Form</SubType>
@@ -107,6 +118,9 @@
     <EmbeddedResource Include="Administrador\Lista_Maestros.resx">
       <DependentUpon>Lista_Maestros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Lista_Materias.resx">
+      <DependentUpon>Lista_Materias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Pantalla_Principal_Admin.resx">
       <DependentUpon>Pantalla_Principal_Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestro\Elaborar_Examen.resx">
+      <DependentUpon>Elaborar_Examen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\Pantalla_Principal_Maestro.resx">
       <DependentUpon>Pantalla_Principal_Maestro.cs</DependentUpon>

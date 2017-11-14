@@ -56,6 +56,8 @@ namespace SistemaExamenes.Administrador
                     LIMPIAR();
                     lb_Confirmacion.Visible = false;
                     txt_Confirm_Contra.Visible = false;
+                    panel1.Visible = false;
+                    panel2.Visible = true;
 
                 }
             }
@@ -85,6 +87,10 @@ namespace SistemaExamenes.Administrador
         private void Lista_Alumnos_Load(object sender, EventArgs e)
         {
             CARGAR_ALUMNOS();
+            txt_Confirm_Contra.Visible = false;
+            lb_Confirmacion.Visible = false;
+            panel2.Visible = false;
+            panel1.Visible = true;
 
             //txt_Nombre.AutoCompleteMode = AutoCompleteMode.Suggest;
             //txt_Nombre.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -161,6 +167,8 @@ namespace SistemaExamenes.Administrador
                 MessageBox.Show("Alumno Insertado Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 LIMPIAR1();
+                panel1.Visible = true;
+                panel2.Visible = false;
 
             }
             else
@@ -197,13 +205,15 @@ namespace SistemaExamenes.Administrador
 
         private void btn_BuscarMan_Click(object sender, EventArgs e)
         {
+            
+
             admin.Nombre = txt_NomBusque.Text;
             admin.MANTENIMIENTO_BUSQUEDA();
             lb_idAlumno.Text = Convert.ToString(admin.IdAlumno);
             lb_idUsuario.Text = Convert.ToString(admin.IdUsuario);
-            int idmaestro = admin.IdMaestro;
-            admin.ID = idmaestro;
-            admin.NOMBRE_MAESTRO();
+            //int idmaestro = admin.IdMaestro;
+            //admin.ID = idmaestro;
+            //admin.NOMBRE_MAESTRO();
             txt_MaestroMan.Text = admin.NombreMaestro;
             cb_GradoMan.Text = admin.Grado;
             cb_GrupoMan.Text = admin.Grupo;
@@ -216,6 +226,8 @@ namespace SistemaExamenes.Administrador
             txt_MaestroMan.Text = String.Empty;
             cb_GradoMan.Text = String.Empty;
             cb_GrupoMan.Text = String.Empty;
+            lb_idAlumno.Text = String.Empty;
+            lb_idUsuario.Text = String.Empty;
         }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)

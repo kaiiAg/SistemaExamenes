@@ -51,5 +51,11 @@ namespace SistemaExamenes.Administrador
             Lista_Alumnos list_alum = new Lista_Alumnos();
             list_alum.Show();
         }
+
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lista_Materias list_mat = new Lista_Materias();
+            list_mat.Show();
+        }
     }
 }

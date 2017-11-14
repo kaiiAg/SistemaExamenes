@@ -545,7 +545,7 @@ namespace BLL
                         
                         _IdAlumno = Convert.ToInt32(ds.Tables[0].Rows[0]["idAlumno"]);
                         _IdUsuario = Convert.ToInt32(ds.Tables[0].Rows[0]["idUsuario"]);
-                        _IdMaestro = Convert.ToInt32(ds.Tables[0].Rows[0]["idMaestro"]);
+                        _NombreMaestro = Convert.ToString(ds.Tables[0].Rows[0]["nombre"]).ToString();
                         _Grado = Convert.ToString(ds.Tables[0].Rows[0]["grado"]);
                         _Grupo = Convert.ToString(ds.Tables[0].Rows[0]["grupo"]);
 
@@ -557,6 +557,11 @@ namespace BLL
                     {
                         MessageBox.Show("datos no encontrados", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                        _IdAlumno = 0;
+                        _IdUsuario = 0;
+                        _NombreMaestro = "";
+                        _Grado = "";
+                        _Grupo = "";
 
                     }
 
@@ -832,6 +837,9 @@ namespace BLL
                     {
                         MessageBox.Show("datos no encontrados", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                        _IdMaestro = 0;
+                        _IdUsuario = 0;
+                        _NombreMaestro = "";
 
                     }
 
@@ -973,6 +981,90 @@ namespace BLL
                 }
             }
         }
+
+
+        public DataSet CARGA_MATERIAS()
+        {
+            conexion = cls_DAL.trae_conexion("BDExamenes", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                sql = "SP_ERROR_INSERT";
+                ParamStruct[] parametros = new ParamStruct[2];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                return null;
+            }
+            else
+            {
+                sql = "SP_MATERIAS_SELECT";
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+
+
+                if (numero_error != 0)
+                {
+                    sql = "SP_ERROR_INSERT";
+                    ParamStruct[] parametros = new ParamStruct[2];
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
+                    cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                    cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public bool INSERT_MATERIAS()
+        {
+            conexion = cls_DAL.trae_conexion("BDExamenes", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                sql = "SP_ERROR_INSERT";
+                ParamStruct[] parametros = new ParamStruct[2];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                MessageBox.Show("1" + mensaje_error + "  " + numero_error);
+                return false;
+            }
+            else
+            {
+                sql = "SP_INSERT_MATERIAS";
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.NChar, _Nombre);
+               
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    sql = "SP_ERROR_INSERT";
+                    ParamStruct[] parametross = new ParamStruct[2];
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametross, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametross, 1, "@numerror", SqlDbType.Int, numero_error);
+                    cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametross, ref mensaje_error, ref numero_error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    MessageBox.Show("2" + mensaje_error + "  " + numero_error);
+                    return true;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    _Validacion = "Insertado";
+                    return true;
+                }
+            }
+        }
+
 
         #endregion
 
