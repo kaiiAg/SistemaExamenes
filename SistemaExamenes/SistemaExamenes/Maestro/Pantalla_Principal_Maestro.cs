@@ -28,5 +28,20 @@ namespace SistemaExamenes.Maestro
             Lista_Alumnos frm = new Lista_Alumnos();
             frm.Show();
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Esta seguro de Cerrar Sesion", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                Application.Restart();
+
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
+        }
     }
 }

@@ -19,3 +19,4 @@ K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\Si
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\Bunifu_UI_v1.5.3.dll
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Administrador.Lista_Materias.resources
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Maestro.Elaborar_Examen.resources
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Alumnos.Seleccionar_Examen.resources

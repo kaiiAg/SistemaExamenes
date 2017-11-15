@@ -91,7 +91,7 @@ namespace SistemaExamenes.Maestro
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             INSERT_RESPUESTAS_MARCA();
-            CARGAR_CODEXAMEN();
+            
 
         }
 
@@ -306,8 +306,7 @@ namespace SistemaExamenes.Maestro
 
                     LIMPIAR();
                     pn_Respuestas.Visible = false;
-                    maes.Nombre = cb_Materias.Text;
-                    maes.ACTUALIZA_SECUENCIA_EXAMEN();
+                    
                     txt_Pregunta.Enabled = true;
 
                 }
@@ -333,7 +332,7 @@ namespace SistemaExamenes.Maestro
             ck_Respuesta2.Checked = false;
             ck_Respuesta3.Checked = false;
             ck_Respuesta4.Checked = false;
-            nu_PuntosMarque.Text = "1";
+            nu_PuntosMarque.Text = "";
         }
 
         private void btn_AgregarA_Click(object sender, EventArgs e)
@@ -382,7 +381,7 @@ namespace SistemaExamenes.Maestro
         private void btn_AceptarB_Click(object sender, EventArgs e)
         {
             INSERTAR_REPUESTA_PAREO();
-            CARGAR_CODEXAMEN();
+            
         }
 
         private void INSERTAR_REPUESTA_PAREO()
@@ -391,6 +390,11 @@ namespace SistemaExamenes.Maestro
             {
                 MessageBox.Show("Favor ingresar la respuesta de la columna B", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_Pregunta.Focus();
+                return;
+            }else if (nu_PuntosPareo.Text == String.Empty)
+            {
+                MessageBox.Show("Favor ingresar los puntos de la respuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                nu_PuntosPareo.Focus();
                 return;
             }
             else
@@ -411,8 +415,8 @@ namespace SistemaExamenes.Maestro
                     btn_AgregarA.Enabled = true;
                     LIMPIAR1();
 
-                    maes.Nombre = cb_Materias.Text;
-                    maes.ACTUALIZA_SECUENCIA_EXAMEN();
+                 
+                    
 
                 }
                 else
@@ -429,9 +433,36 @@ namespace SistemaExamenes.Maestro
         {
             txt_PareoA.Text = String.Empty;
             txt_PareoB.Text = String.Empty;
-            nu_PuntosPareo.Text = "1";
+            nu_PuntosPareo.Text = "";
 
         }
-        
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Desea guardar los cambios realizados antes de salir?", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                LIMPIAR();
+                LIMPIAR1();
+                maes.Nombre = cb_Materias.Text;
+                maes.ACTUALIZA_SECUENCIA_EXAMEN();
+                CARGAR_CODEXAMEN();
+
+                Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                Close();
+            }
+        }
+
+        private void btn_GuardarTodo_Click(object sender, EventArgs e)
+        {
+            LIMPIAR();
+            LIMPIAR1();
+            maes.Nombre = cb_Materias.Text;
+            maes.ACTUALIZA_SECUENCIA_EXAMEN();
+            CARGAR_CODEXAMEN();
+        }
     }
 }

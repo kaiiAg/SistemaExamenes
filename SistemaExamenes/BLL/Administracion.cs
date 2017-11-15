@@ -111,7 +111,14 @@ namespace BLL
             set { _Grupo = value; }
         }
 
-        
+        private int _Secuencia;
+
+        public int Secuencia
+        {
+            get { return _Secuencia; }
+            set { _Secuencia = value; }
+        }
+
 
         private string _Validacion;
 
@@ -1039,9 +1046,10 @@ namespace BLL
             else
             {
                 sql = "SP_INSERT_MATERIAS";
-                ParamStruct[] parametros = new ParamStruct[1];
+                ParamStruct[] parametros = new ParamStruct[2];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.NChar, _Nombre);
-               
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@vsecuencia", SqlDbType.Int, _Secuencia);
+
 
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);

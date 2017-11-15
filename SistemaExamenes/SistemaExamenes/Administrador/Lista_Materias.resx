@@ -120,13 +120,22 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_Agregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABsAAAAgCAYAAADjaQM7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAEZSURBVEhL7ZVdEQIxDIQrBQlIQAISkIADJCABCUhAAhKQgATId8Mymf5xR8sDcDuzD9dubtNO
-        k4SfxtK4Mx4beTBujVWcjLeOvBpXxiwkUnZntxaTPTQiMdqLk84aanM9fIWwMfogz9w1aY/4hZGTaS0x
-        9GLQYgaqhrG41QwUDWNxDzMQG/LqE3EvM+ANLyzE4p5mAENpEnHNjOz2jjx/7ZXMAHFoErHPZAqJK0G1
-        +xT7zLguinQMKezc9XpUzXpjNuuCqhntRXPqHVIW/nUWzWgrWmshNSgUzVTUtBk/u8ZSPx7a0wMvzbx4
-        CnLxs9lk/LkZHZxipCj55un72TWWuXhN6yEDGX6aQ8egGOM51ZOc9tXM+1qEcAcjqnUG4avz7AAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABsAAAAgCAYAAADjaQM7AAAABGdBTUEAALGPC/xhBQAAARlJREFUSEvt
+        lV0RAjEMhCsFCUhAAhKQgAMkIAEJSEACEpCABMh3wzKZ/nFHywNwO7MP125u006ThJ/G0rgzHht5MG6N
+        VZyMt468GlfGLCRSdme3FpM9NCIx2ouTzhpqcz18hbAx+iDP3DVpj/iFkZNpLTH0YtBiBqqGsbjVDBQN
+        Y3EPMxAb8uoTcS8z4A0vLMTinmYAQ2kScc2M7PaOPH/tlcwAcWgSsc9kCokrQbX7FPvMuC6KdAwp7Nz1
+        elTNemM264KqGe1Fc+odUhb+dRbNaCtaayE1KBTNVNS0GT+7xlI/HtrTAy/NvHgKcvGz2WT8uRkdnGKk
+        KPnm6fvZNZa5eE3rIQMZfppDx6AY4znVk5z21cz7WoRwByOqdQbhq/PsAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAgCAYAAADnnNMGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADySURBVEhL7ZVRDcIwFEUrAQlIQAISkIAEHCAFCUhAAhKQgAR4N3CTrn1tb7sEfnqSk5CtLyfZ
+        Shcmk5+zNw+fnzKYgRJn8/X1hgsCF1OeiQPqUBxozpzMdDEtDXkBinsZD9NbTNNQLUC35gJliCFl7d3M
+        2Ji44Q3EPp1rqVizM13UUM1qgKwJSQEyEuoKkJ7QUIAouwi2/rBF1ADtDvUGqBwaDdBmaG2AFkPeCZyK
+        XXQ0lV13NTNaByQC/JCp2xvrFtQeVRwgrRDuZZSGvAApzeCpZMc8SYdqAZLOVAMEQ/hK4sWpRwVmsHHw
+        yJuByb8J4Q0bZSJEQrAidgAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

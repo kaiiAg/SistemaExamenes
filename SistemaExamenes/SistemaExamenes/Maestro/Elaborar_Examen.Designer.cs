@@ -33,6 +33,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_GuardarPregunta = new Bunifu.Framework.UI.BunifuImageButton();
             this.pn_Respuestas = new System.Windows.Forms.Panel();
+            this.nu_PuntosMarque = new System.Windows.Forms.DomainUpDown();
             this.btn_AgregarResM = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.ck_Respuesta4 = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -45,6 +46,7 @@
             this.txt_Respuesta1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txt_Pregunta = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.nu_PuntosPareo = new System.Windows.Forms.DomainUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_AceptarB = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_AgregarA = new Bunifu.Framework.UI.BunifuImageButton();
@@ -53,8 +55,9 @@
             this.cb_Materias = new System.Windows.Forms.ComboBox();
             this.lb_Codigo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nu_PuntosMarque = new System.Windows.Forms.DomainUpDown();
-            this.nu_PuntosPareo = new System.Windows.Forms.DomainUpDown();
+            this.btn_GuardarTodo = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_Salir = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.w.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_GuardarPregunta)).BeginInit();
@@ -63,13 +66,16 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_AceptarB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_AgregarA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_GuardarTodo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // w
             // 
             this.w.Controls.Add(this.tabPage1);
             this.w.Controls.Add(this.tabPage2);
-            this.w.Location = new System.Drawing.Point(15, 45);
+            this.w.Location = new System.Drawing.Point(15, 98);
             this.w.Margin = new System.Windows.Forms.Padding(4);
             this.w.Name = "w";
             this.w.SelectedIndex = 0;
@@ -122,6 +128,23 @@
             this.pn_Respuestas.Name = "pn_Respuestas";
             this.pn_Respuestas.Size = new System.Drawing.Size(620, 311);
             this.pn_Respuestas.TabIndex = 2;
+            // 
+            // nu_PuntosMarque
+            // 
+            this.nu_PuntosMarque.Items.Add("1");
+            this.nu_PuntosMarque.Items.Add("2");
+            this.nu_PuntosMarque.Items.Add("3");
+            this.nu_PuntosMarque.Items.Add("4");
+            this.nu_PuntosMarque.Items.Add("5");
+            this.nu_PuntosMarque.Items.Add("6");
+            this.nu_PuntosMarque.Items.Add("7");
+            this.nu_PuntosMarque.Items.Add("8");
+            this.nu_PuntosMarque.Items.Add("9");
+            this.nu_PuntosMarque.Items.Add("10");
+            this.nu_PuntosMarque.Location = new System.Drawing.Point(209, 5);
+            this.nu_PuntosMarque.Name = "nu_PuntosMarque";
+            this.nu_PuntosMarque.Size = new System.Drawing.Size(65, 28);
+            this.nu_PuntosMarque.TabIndex = 5;
             // 
             // btn_AgregarResM
             // 
@@ -310,6 +333,24 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Crear Pareo";
             // 
+            // nu_PuntosPareo
+            // 
+            this.nu_PuntosPareo.Items.Add("1");
+            this.nu_PuntosPareo.Items.Add("2");
+            this.nu_PuntosPareo.Items.Add("3");
+            this.nu_PuntosPareo.Items.Add("4");
+            this.nu_PuntosPareo.Items.Add("5");
+            this.nu_PuntosPareo.Items.Add("6");
+            this.nu_PuntosPareo.Items.Add("7");
+            this.nu_PuntosPareo.Items.Add("8");
+            this.nu_PuntosPareo.Items.Add("9");
+            this.nu_PuntosPareo.Items.Add("10");
+            this.nu_PuntosPareo.Location = new System.Drawing.Point(218, 43);
+            this.nu_PuntosPareo.Name = "nu_PuntosPareo";
+            this.nu_PuntosPareo.Size = new System.Drawing.Size(77, 28);
+            this.nu_PuntosPareo.TabIndex = 5;
+            this.nu_PuntosPareo.Visible = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -318,6 +359,7 @@
             this.label2.Size = new System.Drawing.Size(189, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "Valor de Respuestas:";
+            this.label2.Visible = false;
             // 
             // btn_AceptarB
             // 
@@ -330,6 +372,7 @@
             this.btn_AceptarB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_AceptarB.TabIndex = 3;
             this.btn_AceptarB.TabStop = false;
+            this.btn_AceptarB.Visible = false;
             this.btn_AceptarB.Zoom = 10;
             this.btn_AceptarB.Click += new System.EventHandler(this.btn_AceptarB_Click);
             // 
@@ -344,6 +387,7 @@
             this.btn_AgregarA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_AgregarA.TabIndex = 2;
             this.btn_AgregarA.TabStop = false;
+            this.btn_AgregarA.Visible = false;
             this.btn_AgregarA.Zoom = 10;
             this.btn_AgregarA.Click += new System.EventHandler(this.btn_AgregarA_Click);
             // 
@@ -365,6 +409,7 @@
             this.txt_PareoB.Size = new System.Drawing.Size(287, 33);
             this.txt_PareoB.TabIndex = 1;
             this.txt_PareoB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_PareoB.Visible = false;
             // 
             // txt_PareoA
             // 
@@ -384,11 +429,12 @@
             this.txt_PareoA.Size = new System.Drawing.Size(253, 33);
             this.txt_PareoA.TabIndex = 0;
             this.txt_PareoA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_PareoA.Visible = false;
             // 
             // cb_Materias
             // 
             this.cb_Materias.FormattingEnabled = true;
-            this.cb_Materias.Location = new System.Drawing.Point(511, 8);
+            this.cb_Materias.Location = new System.Drawing.Point(511, 61);
             this.cb_Materias.Name = "cb_Materias";
             this.cb_Materias.Size = new System.Drawing.Size(171, 30);
             this.cb_Materias.TabIndex = 1;
@@ -397,7 +443,7 @@
             // lb_Codigo
             // 
             this.lb_Codigo.AutoSize = true;
-            this.lb_Codigo.Location = new System.Drawing.Point(361, 11);
+            this.lb_Codigo.Location = new System.Drawing.Point(361, 64);
             this.lb_Codigo.Name = "lb_Codigo";
             this.lb_Codigo.Size = new System.Drawing.Size(71, 24);
             this.lb_Codigo.TabIndex = 5;
@@ -406,59 +452,63 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 11);
+            this.label3.Location = new System.Drawing.Point(298, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 24);
             this.label3.TabIndex = 6;
             this.label3.Text = "Código:";
             // 
-            // nu_PuntosMarque
+            // btn_GuardarTodo
             // 
-            this.nu_PuntosMarque.Items.Add("1");
-            this.nu_PuntosMarque.Items.Add("2");
-            this.nu_PuntosMarque.Items.Add("3");
-            this.nu_PuntosMarque.Items.Add("4");
-            this.nu_PuntosMarque.Items.Add("5");
-            this.nu_PuntosMarque.Items.Add("6");
-            this.nu_PuntosMarque.Items.Add("7");
-            this.nu_PuntosMarque.Items.Add("8");
-            this.nu_PuntosMarque.Items.Add("9");
-            this.nu_PuntosMarque.Items.Add("10");
-            this.nu_PuntosMarque.Location = new System.Drawing.Point(209, 5);
-            this.nu_PuntosMarque.Name = "nu_PuntosMarque";
-            this.nu_PuntosMarque.Size = new System.Drawing.Size(65, 28);
-            this.nu_PuntosMarque.TabIndex = 5;
-            this.nu_PuntosMarque.Text = "1";
+            this.btn_GuardarTodo.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_GuardarTodo.Image = ((System.Drawing.Image)(resources.GetObject("btn_GuardarTodo.Image")));
+            this.btn_GuardarTodo.ImageActive = null;
+            this.btn_GuardarTodo.Location = new System.Drawing.Point(607, 0);
+            this.btn_GuardarTodo.Name = "btn_GuardarTodo";
+            this.btn_GuardarTodo.Size = new System.Drawing.Size(46, 42);
+            this.btn_GuardarTodo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_GuardarTodo.TabIndex = 7;
+            this.btn_GuardarTodo.TabStop = false;
+            this.btn_GuardarTodo.Zoom = 10;
+            this.btn_GuardarTodo.Click += new System.EventHandler(this.btn_GuardarTodo_Click);
             // 
-            // nu_PuntosPareo
+            // btn_Salir
             // 
-            this.nu_PuntosPareo.Items.Add("1");
-            this.nu_PuntosPareo.Items.Add("2");
-            this.nu_PuntosPareo.Items.Add("3");
-            this.nu_PuntosPareo.Items.Add("4");
-            this.nu_PuntosPareo.Items.Add("5");
-            this.nu_PuntosPareo.Items.Add("6");
-            this.nu_PuntosPareo.Items.Add("7");
-            this.nu_PuntosPareo.Items.Add("8");
-            this.nu_PuntosPareo.Items.Add("9");
-            this.nu_PuntosPareo.Items.Add("10");
-            this.nu_PuntosPareo.Location = new System.Drawing.Point(218, 43);
-            this.nu_PuntosPareo.Name = "nu_PuntosPareo";
-            this.nu_PuntosPareo.Size = new System.Drawing.Size(77, 28);
-            this.nu_PuntosPareo.TabIndex = 5;
-            this.nu_PuntosPareo.Text = "1";
+            this.btn_Salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
+            this.btn_Salir.ImageActive = null;
+            this.btn_Salir.Location = new System.Drawing.Point(653, 0);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(46, 42);
+            this.btn_Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Salir.TabIndex = 8;
+            this.btn_Salir.TabStop = false;
+            this.btn_Salir.Zoom = 10;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.btn_GuardarTodo);
+            this.panel1.Controls.Add(this.btn_Salir);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(699, 42);
+            this.panel1.TabIndex = 9;
             // 
             // Elaborar_Examen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(698, 614);
+            this.ClientSize = new System.Drawing.Size(700, 663);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lb_Codigo);
             this.Controls.Add(this.cb_Materias);
             this.Controls.Add(this.w);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Elaborar_Examen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -474,6 +524,9 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_AceptarB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_AgregarA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_GuardarTodo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,5 +560,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DomainUpDown nu_PuntosMarque;
         private System.Windows.Forms.DomainUpDown nu_PuntosPareo;
+        private Bunifu.Framework.UI.BunifuImageButton btn_GuardarTodo;
+        private Bunifu.Framework.UI.BunifuImageButton btn_Salir;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -17,6 +17,7 @@ namespace SistemaExamenes
     public partial class Login : Form
     {
         Acceso objlogin = new Acceso();
+        BLL.Alumnos al = new BLL.Alumnos();
         public Login()
         {
             InitializeComponent();
@@ -58,6 +59,11 @@ namespace SistemaExamenes
             else if (objlogin.Tipo == 3)
             {
                 MessageBox.Show("Bienvenido: " + txt_Usuario.Text, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                al.User = txt_Usuario.Text;
+                al.Pass = txt_Contraseña.Text;
+                al.ID_ALUMNO();
+                int id = al.IdAlumno;
+                objmenuprincipal3.lb_Id.Text = Convert.ToString(id);
                 objmenuprincipal3.Show();
                 this.Hide();
                 

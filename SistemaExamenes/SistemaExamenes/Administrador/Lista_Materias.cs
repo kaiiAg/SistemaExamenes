@@ -38,7 +38,9 @@ namespace SistemaExamenes.Administrador
             }
             else
             {
+                
                 admin.Nombre = txt_Materia.Text;
+                admin.Secuencia = 1;
                 admin.INSERT_MATERIAS();
                 if (admin.Validacion == "Insertado")
                 {

@@ -275,5 +275,10 @@ namespace SistemaExamenes.Administrador
             admin.DELETE_USER();
 
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

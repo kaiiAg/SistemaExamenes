@@ -127,6 +127,9 @@
     <EmbeddedResource Include="Alumnos\Pantalla_Principal_Alum.resx">
       <DependentUpon>Pantalla_Principal_Alum.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\Seleccionar Examen.resx">
+      <DependentUpon>Seleccionar Examen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

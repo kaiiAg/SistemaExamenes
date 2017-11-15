@@ -30,10 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elaborarExamenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,18 +60,6 @@
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.opcionesToolStripMenuItem.Text = "Opciones";
             // 
-            // informaciónToolStripMenuItem
-            // 
-            this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
-            this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
-            this.informaciónToolStripMenuItem.Text = "Información";
-            // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            // 
             // elaborarExamenToolStripMenuItem
             // 
             this.elaborarExamenToolStripMenuItem.Name = "elaborarExamenToolStripMenuItem";
@@ -85,6 +73,19 @@
             this.calificacionesToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.calificacionesToolStripMenuItem.Text = "Calificaciones";
             this.calificacionesToolStripMenuItem.Click += new System.EventHandler(this.calificacionesToolStripMenuItem_Click);
+            // 
+            // informaciónToolStripMenuItem
+            // 
+            this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
+            this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.informaciónToolStripMenuItem.Text = "Información";
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // Pantalla_Principal_Maestro
             // 

@@ -67,6 +67,8 @@
             this.cb_GradoMan = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alumnos)).BeginInit();
@@ -82,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Eliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Modificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_BuscarMan)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -89,7 +93,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(15, 16);
+            this.tabControl1.Location = new System.Drawing.Point(18, 59);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -604,14 +608,39 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Grado:";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Controls.Add(this.bunifuImageButton1);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(704, 42);
+            this.panel4.TabIndex = 1;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(657, 0);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(47, 42);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 0;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
             // Lista_Alumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(699, 549);
+            this.ClientSize = new System.Drawing.Size(712, 606);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Lista_Alumnos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -635,6 +664,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Eliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Modificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_BuscarMan)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -677,5 +708,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txt_NomBusque;
         private Bunifu.Framework.UI.BunifuImageButton btn_Eliminar;
         private Bunifu.Framework.UI.BunifuImageButton btn_Limpiar;
+        private System.Windows.Forms.Panel panel4;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }

@@ -34,8 +34,12 @@
             this.dgv_Materias = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txt_Materia = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btn_Agregar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Materias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Agregar)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_Materias
@@ -58,11 +62,11 @@
             this.dgv_Materias.EnableHeadersVisualStyles = false;
             this.dgv_Materias.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.dgv_Materias.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.dgv_Materias.Location = new System.Drawing.Point(12, 120);
+            this.dgv_Materias.Location = new System.Drawing.Point(13, 177);
             this.dgv_Materias.Name = "dgv_Materias";
             this.dgv_Materias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Materias.RowTemplate.Height = 24;
-            this.dgv_Materias.Size = new System.Drawing.Size(675, 417);
+            this.dgv_Materias.Size = new System.Drawing.Size(687, 417);
             this.dgv_Materias.TabIndex = 0;
             // 
             // txt_Materia
@@ -77,7 +81,7 @@
             this.txt_Materia.LineIdleColor = System.Drawing.Color.Gray;
             this.txt_Materia.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txt_Materia.LineThickness = 3;
-            this.txt_Materia.Location = new System.Drawing.Point(13, 59);
+            this.txt_Materia.Location = new System.Drawing.Point(13, 105);
             this.txt_Materia.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Materia.Name = "txt_Materia";
             this.txt_Materia.Size = new System.Drawing.Size(379, 33);
@@ -87,9 +91,10 @@
             // btn_Agregar
             // 
             this.btn_Agregar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Agregar.Enabled = false;
             this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
             this.btn_Agregar.ImageActive = null;
-            this.btn_Agregar.Location = new System.Drawing.Point(399, 48);
+            this.btn_Agregar.Location = new System.Drawing.Point(412, 94);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(162, 44);
             this.btn_Agregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -98,23 +103,49 @@
             this.btn_Agregar.Zoom = 10;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.bunifuImageButton1);
+            this.panel1.Location = new System.Drawing.Point(3, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(707, 42);
+            this.panel1.TabIndex = 3;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(660, 0);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(47, 42);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 0;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
             // Lista_Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(699, 549);
+            this.ClientSize = new System.Drawing.Size(712, 606);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.txt_Materia);
             this.Controls.Add(this.dgv_Materias);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Lista_Materias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista_Materias";
             this.Load += new System.EventHandler(this.Lista_Materias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Materias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Agregar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -124,5 +155,7 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Materias;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txt_Materia;
         private Bunifu.Framework.UI.BunifuImageButton btn_Agregar;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }
