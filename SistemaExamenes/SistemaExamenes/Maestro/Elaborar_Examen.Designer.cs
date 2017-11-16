@@ -58,6 +58,7 @@
             this.btn_GuardarTodo = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Salir = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.w.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_GuardarPregunta)).BeginInit();
@@ -69,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_GuardarTodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // w
@@ -79,7 +81,7 @@
             this.w.Margin = new System.Windows.Forms.Padding(4);
             this.w.Name = "w";
             this.w.SelectedIndex = 0;
-            this.w.Size = new System.Drawing.Size(667, 556);
+            this.w.Size = new System.Drawing.Size(684, 507);
             this.w.TabIndex = 0;
             // 
             // tabPage1
@@ -92,7 +94,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(659, 521);
+            this.tabPage1.Size = new System.Drawing.Size(676, 472);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Crear Marque con X";
             // 
@@ -101,7 +103,7 @@
             this.btn_GuardarPregunta.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btn_GuardarPregunta.Image = ((System.Drawing.Image)(resources.GetObject("btn_GuardarPregunta.Image")));
             this.btn_GuardarPregunta.ImageActive = null;
-            this.btn_GuardarPregunta.Location = new System.Drawing.Point(516, 105);
+            this.btn_GuardarPregunta.Location = new System.Drawing.Point(516, 94);
             this.btn_GuardarPregunta.Name = "btn_GuardarPregunta";
             this.btn_GuardarPregunta.Size = new System.Drawing.Size(122, 33);
             this.btn_GuardarPregunta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -124,7 +126,7 @@
             this.pn_Respuestas.Controls.Add(this.txt_Respuesta3);
             this.pn_Respuestas.Controls.Add(this.txt_Respuesta2);
             this.pn_Respuestas.Controls.Add(this.txt_Respuesta1);
-            this.pn_Respuestas.Location = new System.Drawing.Point(18, 167);
+            this.pn_Respuestas.Location = new System.Drawing.Point(18, 145);
             this.pn_Respuestas.Name = "pn_Respuestas";
             this.pn_Respuestas.Size = new System.Drawing.Size(620, 311);
             this.pn_Respuestas.TabIndex = 2;
@@ -309,7 +311,7 @@
             this.txt_Pregunta.LineIdleColor = System.Drawing.Color.Gray;
             this.txt_Pregunta.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txt_Pregunta.LineThickness = 3;
-            this.txt_Pregunta.Location = new System.Drawing.Point(18, 65);
+            this.txt_Pregunta.Location = new System.Drawing.Point(18, 54);
             this.txt_Pregunta.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Pregunta.Name = "txt_Pregunta";
             this.txt_Pregunta.Size = new System.Drawing.Size(620, 33);
@@ -434,7 +436,7 @@
             // cb_Materias
             // 
             this.cb_Materias.FormattingEnabled = true;
-            this.cb_Materias.Location = new System.Drawing.Point(511, 61);
+            this.cb_Materias.Location = new System.Drawing.Point(524, 61);
             this.cb_Materias.Name = "cb_Materias";
             this.cb_Materias.Size = new System.Drawing.Size(171, 30);
             this.cb_Materias.TabIndex = 0;
@@ -463,9 +465,9 @@
             this.btn_GuardarTodo.BackColor = System.Drawing.Color.SeaGreen;
             this.btn_GuardarTodo.Image = ((System.Drawing.Image)(resources.GetObject("btn_GuardarTodo.Image")));
             this.btn_GuardarTodo.ImageActive = null;
-            this.btn_GuardarTodo.Location = new System.Drawing.Point(607, 0);
+            this.btn_GuardarTodo.Location = new System.Drawing.Point(623, 0);
             this.btn_GuardarTodo.Name = "btn_GuardarTodo";
-            this.btn_GuardarTodo.Size = new System.Drawing.Size(46, 42);
+            this.btn_GuardarTodo.Size = new System.Drawing.Size(46, 45);
             this.btn_GuardarTodo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_GuardarTodo.TabIndex = 7;
             this.btn_GuardarTodo.TabStop = false;
@@ -477,9 +479,9 @@
             this.btn_Salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
             this.btn_Salir.ImageActive = null;
-            this.btn_Salir.Location = new System.Drawing.Point(653, 0);
+            this.btn_Salir.Location = new System.Drawing.Point(666, 0);
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(46, 42);
+            this.btn_Salir.Size = new System.Drawing.Size(48, 45);
             this.btn_Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Salir.TabIndex = 8;
             this.btn_Salir.TabStop = false;
@@ -489,19 +491,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btn_GuardarTodo);
             this.panel1.Controls.Add(this.btn_Salir);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(699, 42);
+            this.panel1.Size = new System.Drawing.Size(714, 45);
             this.panel1.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 36);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // Elaborar_Examen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(700, 663);
+            this.ClientSize = new System.Drawing.Size(712, 606);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lb_Codigo);
@@ -527,6 +539,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_GuardarTodo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,5 +576,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_GuardarTodo;
         private Bunifu.Framework.UI.BunifuImageButton btn_Salir;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

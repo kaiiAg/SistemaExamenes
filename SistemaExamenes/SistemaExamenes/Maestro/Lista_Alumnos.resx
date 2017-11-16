@@ -118,6 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA37AAAN+wELdzWbAAAAB3RJ
+        TUUH4QsQFx0jcmeskgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFcSURBVFhH
+        vZYxagJRFEXFSgsVt2AhWIluwErchxvJDmIUUqYRUrsEyQLcglUgVaxShkzu+/8EkiCM8+b/OXBheP+9
+        c9tpeSmKoq28kDbj5lDpWPlhzLg5VDqJ3YEJ4/yobKU8Ke/WDPZtsxVr6ZG8qzwrZdhOl7M0SDhQTma/
+        EdsdcF4fyXZBW40d5/WQaKp8BmU17GaKxo8km6DzsUHjR5JjdLk4ovEjySW6XFzQ+EHkBo0fPG7Q+MHj
+        Bo0fPG7Q+MHjBo0fPG7Q+MHjBo0P3XeiphYddNXR8TY6arFFVw0dLpWvoKiHOZZob0MHQ+XVrhNhriH6
+        crS8D2dp2aMvR8vneJOUM/pytDxX7pWHRDHXHH0aJJwpd2TGuBlUuFZ+/6bZ95rnvKior3xY6z9s1mct
+        HypZhLrrLFjLh0pGsesqI9byoqJD7PvDgef8qKynPCpvxL57PFeg1foGj/Ryc4aq+qMAAAAASUVORK5C
+        YII=
+</value>
+  </data>
   <data name="bunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAgCAYAAADnnNMGAAAABGdBTUEAALGPC/xhBQAAAPJJREFUSEvt
@@ -128,6 +142,27 @@
         sCJ2AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="NombreAlumno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Grado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Grupo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Fecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ExamenRealizado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PuntosExamen.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PuntosObtenidos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="NombreAlumno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

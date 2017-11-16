@@ -35,10 +35,12 @@
             this.txt_Materia = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btn_Agregar = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Salir = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Materias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Agregar)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,20 +108,30 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btn_Salir);
-            this.panel1.Location = new System.Drawing.Point(3, 1);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(707, 42);
+            this.panel1.Size = new System.Drawing.Size(713, 43);
             this.panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 35);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_Salir
             // 
             this.btn_Salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
             this.btn_Salir.ImageActive = null;
-            this.btn_Salir.Location = new System.Drawing.Point(660, 0);
+            this.btn_Salir.Location = new System.Drawing.Point(666, 0);
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(47, 42);
+            this.btn_Salir.Size = new System.Drawing.Size(47, 43);
             this.btn_Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Salir.TabIndex = 0;
             this.btn_Salir.TabStop = false;
@@ -146,6 +158,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Materias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Agregar)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).EndInit();
             this.ResumeLayout(false);
 
@@ -158,5 +171,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_Agregar;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton btn_Salir;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

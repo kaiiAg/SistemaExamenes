@@ -181,4 +181,32 @@
         Vu+NkQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA37AAAN+wELdzWbAAAAB3RJ
+        TUUH4QsQFy8UJ6pd7AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJVSURBVFhH
+        zZc9axRRFIaXkECKpE9IY5dKIY3YpUqKFYK1+QNCyoBg6R9IaeGPEEJKwU4EE7sUKSzUxsZCEPyIyvo8
+        M+cOs+PM7kyc3fjCw957zjtzzs7cO8wM1Gg0GsIpXMKsZQ1rDcvFr0tDG7CbpC/xq9L4J3zLh73r1AbS
+        ZbfgTbDYG0hX5gk8zoe969IGyir/0zT+DTNbG9UG5q7UgPf5+5yxZtHAg2xLzFHWtPCVGsC/CftwFDje
+        jHQr4e/eAL41OMmOyBfnReBYmVsL+0Th69YAnl34BO9hD1YiZW4lYub07EaqUXjaN0Def+6Jn8EqLMJD
+        eBk4NmZOj96JV4J8pwa8tP671ZgfQ1XHkbMJvSfOm0S+XQPkXHBqL+bb+bRW2+HxdqjGhUmudQOucBdZ
+        ds/5PYAmHYTHNeEx+87rRK51A26zi5g63/GABu2ETZ+74yimf4lcpwbOY+p8CV5DVcaWwqbvHHppwFvw
+        AxZjvgHPoSpjG+FxR3hML7cgLcL7cAs+Z7N6mdOjV/37IlTk3YZv4Z3mKdKjt59tqMinB1Fb9fsgUnh8
+        Q/qauSdLz904rFF4ujWg8G3Bq+yIevlY3gr7ROHr3kASfht5BE8Dx60KJ+G/egN9yJoWbmyA2AK8gLrX
+        KfkANwLHdR7xHAtx2kLEpjawnKcm6l4wTctx2kLE/p8GfOc/jHghYj5OP0KTfsHtwHGTPEf2GC+L2CFk
+        HyZ+mp1FfEzE1+FOA8Vj1nElV2Y9bGMifgbZp1n6BDNgV16aWWINa6mxL+Rr+DwfDP4AHE7CsGeGksUA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAgCAYAAADnnNMGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADySURBVEhL7ZVRDcIwFEUrAQlIQAISkIAEHCAFCUhAAhKQgAR4N3CTrn1tb7sEfnqSk5CtLyfZ
+        Shcmk5+zNw+fnzKYgRJn8/X1hgsCF1OeiQPqUBxozpzMdDEtDXkBinsZD9NbTNNQLUC35gJliCFl7d3M
+        2Ji44Q3EPp1rqVizM13UUM1qgKwJSQEyEuoKkJ7QUIAouwi2/rBF1ADtDvUGqBwaDdBmaG2AFkPeCZyK
+        XXQ0lV13NTNaByQC/JCp2xvrFtQeVRwgrRDuZZSGvAApzeCpZMc8SYdqAZLOVAMEQ/hK4sWpRwVmsHHw
+        yJuByb8J4Q0bZSJEQrAidgAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

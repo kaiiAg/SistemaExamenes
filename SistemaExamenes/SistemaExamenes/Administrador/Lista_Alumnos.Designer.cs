@@ -68,6 +68,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Modificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_BuscarMan)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -611,20 +613,30 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.bunifuImageButton1);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(-1, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(704, 42);
+            this.panel4.Size = new System.Drawing.Size(713, 45);
             this.panel4.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 38);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(657, 0);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(666, 0);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(47, 42);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(47, 45);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 0;
             this.bunifuImageButton1.TabStop = false;
@@ -665,6 +677,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Modificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_BuscarMan)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
@@ -710,5 +723,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_Limpiar;
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

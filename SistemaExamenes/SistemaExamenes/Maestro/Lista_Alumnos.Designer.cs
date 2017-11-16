@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lista_Alumnos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.dgv_Notas = new System.Windows.Forms.DataGridView();
             this.NombreAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +43,7 @@
             this.txt_Nombre = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btn_Buscar = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Notas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Buscar)).BeginInit();
@@ -50,20 +52,30 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.bunifuImageButton1);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(718, 42);
+            this.panel1.Size = new System.Drawing.Size(724, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(668, 0);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(674, 0);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(47, 42);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(50, 45);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 0;
             this.bunifuImageButton1.TabStop = false;
@@ -195,6 +207,7 @@
             this.Text = "Lista_Alumnos";
             this.Load += new System.EventHandler(this.Lista_Alumnos_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Notas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Buscar)).EndInit();
@@ -216,5 +229,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PuntosObtenidos;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txt_Nombre;
         private Bunifu.Framework.UI.BunifuImageButton btn_Buscar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

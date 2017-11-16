@@ -74,5 +74,10 @@ namespace SistemaExamenes
             }
 
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
