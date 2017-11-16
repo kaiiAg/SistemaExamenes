@@ -359,6 +359,85 @@ namespace BLL
         }
 
 
+        public DataSet MOSTRAR_NOTAS()
+        {
+            conexion = cls_DAL.trae_conexion("BDExamenes", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                sql = "SP_ERROR_INSERT";
+                ParamStruct[] parametros = new ParamStruct[2];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                return null;
+            }
+            else
+            {
+                sql = "SP_SELECT_NOTAS_ALMNOS";
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    sql = "SP_ERROR_INSERT";
+                    ParamStruct[] parametroSs = new ParamStruct[2];
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametroSs, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametroSs, 1, "@numerror", SqlDbType.Int, numero_error);
+                    cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                    cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametroSs, ref mensaje_error, ref numero_error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+
+        public DataSet CARGAR_NOTAS_BUSQUEDA()
+        {
+            conexion = cls_DAL.trae_conexion("BDExamenes", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                sql = "SP_ERROR_INSERT";
+                ParamStruct[] parametros = new ParamStruct[2];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                return null;
+            }
+            else
+            {
+                sql = "SP_SELECT_NOTAS_ALMNOS_BUSQUEDA";
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@vnombre", SqlDbType.VarChar, _Nombre);
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+
+                if (numero_error != 0)
+                {
+                    sql = "SP_ERROR_INSERT";
+                    ParamStruct[] parametroSs = new ParamStruct[2];
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametroSs, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametroSs, 1, "@numerror", SqlDbType.Int, numero_error);
+                    cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                    cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametroSs, ref mensaje_error, ref numero_error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+
         #endregion
 
 

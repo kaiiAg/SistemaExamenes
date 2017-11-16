@@ -56,7 +56,6 @@
             this.lb_SeccionPareo = new System.Windows.Forms.Label();
             this.lb_IdAlumno = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_CargarExamen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Cargar = new Bunifu.Framework.UI.BunifuImageButton();
@@ -69,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ColumnaB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ColumnaA)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Cargar)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +89,6 @@
             this.lb_IdExamen.Size = new System.Drawing.Size(96, 24);
             this.lb_IdExamen.TabIndex = 2;
             this.lb_IdExamen.Text = "IdExamen";
-            this.lb_IdExamen.Visible = false;
             // 
             // lb_SeccionX
             // 
@@ -101,7 +98,6 @@
             this.lb_SeccionX.Size = new System.Drawing.Size(131, 24);
             this.lb_SeccionX.TabIndex = 3;
             this.lb_SeccionX.Text = "Marque con X";
-            this.lb_SeccionX.Visible = false;
             // 
             // tabControl1
             // 
@@ -202,7 +198,6 @@
             this.cb_IdPreguntaX.Name = "cb_IdPreguntaX";
             this.cb_IdPreguntaX.Size = new System.Drawing.Size(121, 30);
             this.cb_IdPreguntaX.TabIndex = 11;
-            this.cb_IdPreguntaX.Visible = false;
             // 
             // btn_Siguiente
             // 
@@ -337,30 +332,15 @@
             this.lb_IdAlumno.Size = new System.Drawing.Size(91, 24);
             this.lb_IdAlumno.TabIndex = 5;
             this.lb_IdAlumno.Text = "IdAlumno";
-            this.lb_IdAlumno.Visible = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.bunifuImageButton2);
             this.panel1.Controls.Add(this.bunifuImageButton1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(772, 42);
             this.panel1.TabIndex = 6;
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(679, 0);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(46, 42);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 1;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
             // 
             // bunifuImageButton1
             // 
@@ -460,7 +440,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ColumnaB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ColumnaA)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Cargar)).EndInit();
             this.ResumeLayout(false);
@@ -491,7 +470,6 @@
         private System.Windows.Forms.ComboBox cb_PreguntasPa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private System.Windows.Forms.DataGridViewTextBoxColumn respuesta;
         private Bunifu.Framework.UI.BunifuImageButton btn_Cargar;
     }

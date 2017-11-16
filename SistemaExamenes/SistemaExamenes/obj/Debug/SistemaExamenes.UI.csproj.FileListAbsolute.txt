@@ -20,3 +20,4 @@ K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\bin\Debug\Bu
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Administrador.Lista_Materias.resources
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Maestro.Elaborar_Examen.resources
 K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Alumnos.Seleccionar_Examen.resources
+K:\Documents\GitHub\SistemaExamenes\SistemaExamenes\SistemaExamenes\obj\Debug\SistemaExamenes.Maestro.Lista_Alumnos.resources

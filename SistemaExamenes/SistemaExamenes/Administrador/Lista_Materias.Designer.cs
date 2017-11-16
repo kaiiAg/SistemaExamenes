@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lista_Materias));
             this.dgv_Materias = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txt_Materia = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btn_Agregar = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_Salir = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Materias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Agregar)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_Materias
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_Materias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Materias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Materias.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgv_Materias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Materias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Materias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Materias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Materias.DoubleBuffered = true;
             this.dgv_Materias.EnableHeadersVisualStyles = false;
@@ -106,24 +106,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.bunifuImageButton1);
+            this.panel1.Controls.Add(this.btn_Salir);
             this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(707, 42);
             this.panel1.TabIndex = 3;
             // 
-            // bunifuImageButton1
+            // btn_Salir
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(660, 0);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(47, 42);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 0;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btn_Salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
+            this.btn_Salir.ImageActive = null;
+            this.btn_Salir.Location = new System.Drawing.Point(660, 0);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(47, 42);
+            this.btn_Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Salir.TabIndex = 0;
+            this.btn_Salir.TabStop = false;
+            this.btn_Salir.Zoom = 10;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // Lista_Materias
             // 
@@ -145,7 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Materias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Agregar)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,6 +157,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txt_Materia;
         private Bunifu.Framework.UI.BunifuImageButton btn_Agregar;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btn_Salir;
     }
 }

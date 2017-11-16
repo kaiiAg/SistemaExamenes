@@ -439,20 +439,16 @@ namespace SistemaExamenes.Maestro
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Desea guardar los cambios realizados antes de salir?", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Recuerde Guardar antes de salir, esta seguro de Salir?", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                LIMPIAR();
-                LIMPIAR1();
-                maes.Nombre = cb_Materias.Text;
-                maes.ACTUALIZA_SECUENCIA_EXAMEN();
-                CARGAR_CODEXAMEN();
+                
 
                 Close();
             }
             else if (dialogResult == DialogResult.No)
             {
-                Close();
+               
             }
         }
 

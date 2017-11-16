@@ -110,6 +110,8 @@ namespace BLL
             set { _Validacion = value; }
         }
 
+        
+
 
 
         #endregion
@@ -461,6 +463,56 @@ namespace BLL
                 }
             }
         }
+
+
+        public bool INSERT_NOTA_ALUMNO()
+        {
+            conexion = cls_DAL.trae_conexion("BDExamenes", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                sql = "SP_ERROR_INSERT";
+                ParamStruct[] parametros = new ParamStruct[2];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                MessageBox.Show("1" + mensaje_error + "  " + numero_error);
+                return false;
+            }
+            else
+            {
+                sql = "SP_OBTENER_NOTA";
+                ParamStruct[] parametros = new ParamStruct[3];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@vidalumno", SqlDbType.Int, _IdAlumno);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@videxamen", SqlDbType.Int, _IdExamen);
+               
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@vcodexamen", SqlDbType.VarChar, _CodExamen);
+               
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    sql = "SP_ERROR_INSERT";
+                    ParamStruct[] parametross = new ParamStruct[2];
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametross, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametross, 1, "@numerror", SqlDbType.Int, numero_error);
+                    cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametross, ref mensaje_error, ref numero_error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    MessageBox.Show("2" + mensaje_error + "  " + numero_error);
+                    return true;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    _Validacion = "Insertado";
+                    return true;
+                }
+            }
+        }
+
+
+
 
 
         #endregion

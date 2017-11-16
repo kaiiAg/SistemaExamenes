@@ -21,7 +21,17 @@ namespace SistemaExamenes.Alumnos
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult dialogResult = MessageBox.Show("Esta seguro de salir?", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+               
+                Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+             
+            }
         }
 
         private void CARGAR_CODEXAMEN()
@@ -36,11 +46,11 @@ namespace SistemaExamenes.Alumnos
         private void Seleccionar_Examen_Load(object sender, EventArgs e)
         {
             CARGAR_CODEXAMEN();
-            
+
 
         }
 
-        
+
 
         private void btn_Siguiente_Click(object sender, EventArgs e)
         {
@@ -61,7 +71,7 @@ namespace SistemaExamenes.Alumnos
                 }
             }
 
-                    al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
+            al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
             al.Pregunta = lb_Pregunta.Text;
             al.Respuesta = dato;
             al.IdAlumno = Convert.ToInt32(lb_IdAlumno.Text);
@@ -76,9 +86,9 @@ namespace SistemaExamenes.Alumnos
                     MOSTRAR_PREGUNTA();
                     MOSTRAR_RESPUESTA();
 
-                }catch (Exception ex)
+                } catch (Exception ex)
                 {
-                    MessageBox.Show("Finalizacion de parte Marque con X");
+                    INSERTAR_NOTA();
                 }
 
             }
@@ -110,7 +120,7 @@ namespace SistemaExamenes.Alumnos
 
         }
 
-        
+
         private void MOSTRAR_PREGUNTA()
         {
             al.IdPregunta = Convert.ToInt32(cb_IdPreguntaX.Text);
@@ -121,11 +131,35 @@ namespace SistemaExamenes.Alumnos
         private void MOSTRAR_RESPUESTA()
         {
             al.IdPregunta = Convert.ToInt32(cb_IdPreguntaX.Text);
-           
+
             dgv_Respuestas.DataSource = al.MOSTRAR_RESPUESTA().Tables[0];
-           
+
         }
 
-        
+        private void btn_GuardarExamen_Click(object sender, EventArgs e)
+        {
+            INSERTAR_NOTA();
+        }
+
+        private void INSERTAR_NOTA()
+        {
+            al.IdAlumno = Convert.ToInt32(lb_IdAlumno.Text);
+            al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
+            al.CodExamen = cb_CodExamen.Text;
+            al.INSERT_NOTA_ALUMNO();
+            if (al.Validacion == "Insertado")
+            {
+                MessageBox.Show("Felicitaciones has terminado el examen!!!", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
+
+            }        
+            else
+            {
+                MessageBox.Show("Por favor Confirmar Contraseña", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+}
+
     }
 }

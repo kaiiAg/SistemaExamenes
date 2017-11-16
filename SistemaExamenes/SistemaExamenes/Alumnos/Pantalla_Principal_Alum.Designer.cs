@@ -36,6 +36,7 @@
             this.btn_Entrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.cb_Materias = new System.Windows.Forms.ComboBox();
             this.lb_Id = new System.Windows.Forms.Label();
+            this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Entrar)).BeginInit();
@@ -45,6 +46,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informaciónToolStripMenuItem,
             this.cerrarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -58,6 +60,7 @@
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -110,6 +113,13 @@
             this.lb_Id.Text = "label2";
             this.lb_Id.Visible = false;
             // 
+            // informaciónToolStripMenuItem
+            // 
+            this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
+            this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.informaciónToolStripMenuItem.Text = "Información";
+            this.informaciónToolStripMenuItem.Click += new System.EventHandler(this.informaciónToolStripMenuItem_Click);
+            // 
             // Pantalla_Principal_Alum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -145,5 +155,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_Entrar;
         private System.Windows.Forms.ComboBox cb_Materias;
         public System.Windows.Forms.Label lb_Id;
+        private System.Windows.Forms.ToolStripMenuItem informaciónToolStripMenuItem;
     }
 }

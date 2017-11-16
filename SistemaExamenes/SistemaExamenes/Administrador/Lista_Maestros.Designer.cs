@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lista_Maestros));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -58,7 +58,7 @@
             this.lb_idUsuario = new System.Windows.Forms.Label();
             this.lb_IdMaestro = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_Salir = new Bunifu.Framework.UI.BunifuImageButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_Maestros)).BeginInit();
@@ -75,7 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Modificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_BuscarMan)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -107,19 +107,19 @@
             // 
             // dvg_Maestros
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvg_Maestros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dvg_Maestros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dvg_Maestros.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dvg_Maestros.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dvg_Maestros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvg_Maestros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvg_Maestros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dvg_Maestros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvg_Maestros.DoubleBuffered = true;
             this.dvg_Maestros.EnableHeadersVisualStyles = false;
@@ -289,7 +289,7 @@
             this.txt_ConfiContra.Name = "txt_ConfiContra";
             this.txt_ConfiContra.Size = new System.Drawing.Size(245, 45);
             this.txt_ConfiContra.TabIndex = 9;
-            this.txt_ConfiContra.Text = "Confirmar Contraseña";
+            this.txt_ConfiContra.Text = "Contraseña";
             this.txt_ConfiContra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_Contraseña
@@ -482,24 +482,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.bunifuImageButton1);
+            this.panel1.Controls.Add(this.btn_Salir);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(705, 42);
             this.panel1.TabIndex = 1;
             // 
-            // bunifuImageButton1
+            // btn_Salir
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(658, 0);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(47, 42);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 0;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btn_Salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
+            this.btn_Salir.ImageActive = null;
+            this.btn_Salir.Location = new System.Drawing.Point(658, 0);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(47, 42);
+            this.btn_Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Salir.TabIndex = 0;
+            this.btn_Salir.TabStop = false;
+            this.btn_Salir.Zoom = 10;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // Lista_Maestros
             // 
@@ -535,7 +536,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Modificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_BuscarMan)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Salir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -569,6 +570,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_Eliminar;
         private System.Windows.Forms.Label lb_Confirmas;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btn_Salir;
     }
 }

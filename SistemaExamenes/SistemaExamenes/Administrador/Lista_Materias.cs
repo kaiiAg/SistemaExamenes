@@ -66,5 +66,10 @@ namespace SistemaExamenes.Administrador
         {
             INSERTAR();
         }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

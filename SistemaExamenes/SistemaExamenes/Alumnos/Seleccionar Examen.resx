@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="respuesta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_Siguiente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -126,19 +129,6 @@
         ERaZd3OytIRFZovf8km4uAxqwi4yQGjTVbYRpuk2xoNg0+WCeCJSZEtd/ZqIFBm359KAzaxAaYlIkUWi
         iy0REZkti4rIrBdxRjTrE5MRcR+0m/54eiJ+C3juoQeE6AHHhWzqFaYbeiANi1rhz+tUgTHaV9ean8kw
         vAFhYjhUUcn9dAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="respuesta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="bunifuImageButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABsAAAAgCAYAAADjaQM7AAAABGdBTUEAALGPC/xhBQAAARlJREFUSEvt
-        lV0RAjEMhCsFCUhAAhKQgAMkIAEJSEACEpCABMh3wzKZ/nFHywNwO7MP125u006ThJ/G0rgzHht5MG6N
-        VZyMt468GlfGLCRSdme3FpM9NCIx2ouTzhpqcz18hbAx+iDP3DVpj/iFkZNpLTH0YtBiBqqGsbjVDBQN
-        Y3EPMxAb8uoTcS8z4A0vLMTinmYAQ2kScc2M7PaOPH/tlcwAcWgSsc9kCokrQbX7FPvMuC6KdAwp7Nz1
-        elTNemM264KqGe1Fc+odUhb+dRbNaCtaayE1KBTNVNS0GT+7xlI/HtrTAy/NvHgKcvGz2WT8uRkdnGKk
-        KPnm6fvZNZa5eE3rIQMZfppDx6AY4znVk5z21cz7WoRwByOqdQbhq/PsAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="bunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

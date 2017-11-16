@@ -47,5 +47,26 @@ namespace SistemaExamenes.Alumnos
         {
             CARGAR_MATERIAS();
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Esta seguro de Cerrar Sesion", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                Application.Restart();
+
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
+        }
+
+        private void informaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Creadora: Karen Aguilar Garita\n Correo: karenaguilargarita@outlook.com\n" +
+                "", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

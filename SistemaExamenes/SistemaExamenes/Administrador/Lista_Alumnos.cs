@@ -72,8 +72,8 @@ namespace SistemaExamenes.Administrador
         private void LIMPIAR()
         {
             txt_Usuario.Text = string.Empty;
-            txt_Contraseña.Text = string.Empty;
-            txt_Confirm_Contra.Text = string.Empty;
+            txt_Contraseña.Text = "Contraseña";
+            txt_Confirm_Contra.Text = "Contraseña";
         }
 
         private void LIMPIAR1()
@@ -167,6 +167,7 @@ namespace SistemaExamenes.Administrador
                 MessageBox.Show("Alumno Insertado Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 LIMPIAR1();
+                CARGAR_ALUMNOS();
                 panel1.Visible = true;
                 panel2.Visible = false;
 
@@ -252,7 +253,9 @@ namespace SistemaExamenes.Administrador
             {
                 MessageBox.Show("Informacion Actualizada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarMantenimiento();
-                
+                CARGAR_ALUMNOS();
+
+
 
             }
 
@@ -267,12 +270,16 @@ namespace SistemaExamenes.Administrador
             if (admin.Validacion == "Eliminado")
             {
                 MessageBox.Show("Informacion Borrada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                admin.IdUsuario = Convert.ToInt32(lb_idUsuario.Text);
+                admin.DELETE_USER();
                 LimpiarMantenimiento();
-                
+                CARGAR_ALUMNOS();
+               
+
             }
 
-            admin.IdUsuario = Convert.ToInt32(lb_idUsuario.Text);
-            admin.DELETE_USER();
+            
 
         }
 
