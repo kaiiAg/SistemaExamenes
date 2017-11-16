@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla_Principal_Alum));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Entrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.cb_Materias = new System.Windows.Forms.ComboBox();
             this.lb_Id = new System.Windows.Forms.Label();
-            this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Entrar)).BeginInit();
@@ -55,6 +55,13 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // informaciónToolStripMenuItem
+            // 
+            this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
+            this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.informaciónToolStripMenuItem.Text = "Información";
+            this.informaciónToolStripMenuItem.Click += new System.EventHandler(this.informaciónToolStripMenuItem_Click);
+            // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
@@ -64,6 +71,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Entrar);
             this.panel1.Controls.Add(this.cb_Materias);
@@ -113,28 +121,22 @@
             this.lb_Id.Text = "label2";
             this.lb_Id.Visible = false;
             // 
-            // informaciónToolStripMenuItem
-            // 
-            this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
-            this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
-            this.informaciónToolStripMenuItem.Text = "Información";
-            this.informaciónToolStripMenuItem.Click += new System.EventHandler(this.informaciónToolStripMenuItem_Click);
-            // 
             // Pantalla_Principal_Alum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(1200, 664);
             this.Controls.Add(this.lb_Id);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pantalla_Principal_Alum";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pantalla_Principal_Alum";
+            this.Text = "Módulo Alumnos";
             this.Load += new System.EventHandler(this.Pantalla_Principal_Alum_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
