@@ -136,6 +136,9 @@
     <EmbeddedResource Include="Maestro\Elaborar_Examen.resx">
       <DependentUpon>Elaborar_Examen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maestro\Lista_Alumnos.resx">
+      <DependentUpon>Lista_Alumnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestro\Pantalla_Principal_Maestro.resx">
       <DependentUpon>Pantalla_Principal_Maestro.cs</DependentUpon>
     </EmbeddedResource>
