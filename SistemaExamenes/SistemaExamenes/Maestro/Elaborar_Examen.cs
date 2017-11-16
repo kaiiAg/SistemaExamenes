@@ -73,11 +73,10 @@ namespace SistemaExamenes.Maestro
 
                 if (maes.Validacion == "Insertado")
                 {
-                    MessageBox.Show("Pregunta guardada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    
+                   
                     pn_Respuestas.Visible = true;
                     txt_Pregunta.Enabled = false;
+                    btn_GuardarPregunta.Enabled = false;
 
                 }
                 else
@@ -164,13 +163,13 @@ namespace SistemaExamenes.Maestro
 
                 if (maes.Validacion == "Insertado")
                 {
-                    MessageBox.Show("Respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Pregunta y respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     LIMPIAR();
                     pn_Respuestas.Visible = false;
-                    maes.Nombre = cb_Materias.Text;
-                    maes.ACTUALIZA_SECUENCIA_EXAMEN();
+                   
                     txt_Pregunta.Enabled = true;
+                    btn_GuardarPregunta.Enabled = true;
 
                 }
                 else
@@ -214,9 +213,9 @@ namespace SistemaExamenes.Maestro
 
                     LIMPIAR();
                     pn_Respuestas.Visible = false;
-                    maes.Nombre = cb_Materias.Text;
-                    maes.ACTUALIZA_SECUENCIA_EXAMEN();
+                    
                     txt_Pregunta.Enabled = true;
+                    btn_GuardarPregunta.Enabled = true;
 
                 }
                 else
@@ -260,9 +259,9 @@ namespace SistemaExamenes.Maestro
 
                     LIMPIAR();
                     pn_Respuestas.Visible = false;
-                    maes.Nombre = cb_Materias.Text;
-                    maes.ACTUALIZA_SECUENCIA_EXAMEN();
+                  
                     txt_Pregunta.Enabled = true;
+                    btn_GuardarPregunta.Enabled = true;
 
                 }
                 else
@@ -308,6 +307,7 @@ namespace SistemaExamenes.Maestro
                     pn_Respuestas.Visible = false;
                     
                     txt_Pregunta.Enabled = true;
+                    btn_GuardarPregunta.Enabled = true;
 
                 }
                 else
@@ -459,6 +459,7 @@ namespace SistemaExamenes.Maestro
             maes.Nombre = cb_Materias.Text;
             maes.ACTUALIZA_SECUENCIA_EXAMEN();
             CARGAR_CODEXAMEN();
+            MessageBox.Show("Examen Guardado", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

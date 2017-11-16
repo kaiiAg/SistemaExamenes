@@ -67,7 +67,7 @@
             this.dgv_Materias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Materias.RowTemplate.Height = 24;
             this.dgv_Materias.Size = new System.Drawing.Size(687, 417);
-            this.dgv_Materias.TabIndex = 0;
+            this.dgv_Materias.TabIndex = 1;
             // 
             // txt_Materia
             // 
@@ -85,7 +85,7 @@
             this.txt_Materia.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Materia.Name = "txt_Materia";
             this.txt_Materia.Size = new System.Drawing.Size(379, 33);
-            this.txt_Materia.TabIndex = 1;
+            this.txt_Materia.TabIndex = 0;
             this.txt_Materia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btn_Agregar

@@ -57,5 +57,11 @@ namespace SistemaExamenes.Administrador
             Lista_Materias list_mat = new Lista_Materias();
             list_mat.Show();
         }
+
+        private void informaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Desarrollador: Karen Aguilar Garita\n Correo: karenaguilargarita@outlook.com\n" +
+                "", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

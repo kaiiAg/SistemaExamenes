@@ -160,7 +160,7 @@
             this.txt_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(379, 33);
-            this.txt_Nombre.TabIndex = 2;
+            this.txt_Nombre.TabIndex = 0;
             this.txt_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btn_Buscar

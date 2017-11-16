@@ -144,7 +144,7 @@
             this.nu_PuntosMarque.Location = new System.Drawing.Point(209, 5);
             this.nu_PuntosMarque.Name = "nu_PuntosMarque";
             this.nu_PuntosMarque.Size = new System.Drawing.Size(65, 28);
-            this.nu_PuntosMarque.TabIndex = 5;
+            this.nu_PuntosMarque.TabIndex = 2;
             // 
             // btn_AgregarResM
             // 
@@ -237,7 +237,7 @@
             this.txt_Respuesta4.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Respuesta4.Name = "txt_Respuesta4";
             this.txt_Respuesta4.Size = new System.Drawing.Size(379, 33);
-            this.txt_Respuesta4.TabIndex = 3;
+            this.txt_Respuesta4.TabIndex = 6;
             this.txt_Respuesta4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_Respuesta3
@@ -256,7 +256,7 @@
             this.txt_Respuesta3.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Respuesta3.Name = "txt_Respuesta3";
             this.txt_Respuesta3.Size = new System.Drawing.Size(379, 33);
-            this.txt_Respuesta3.TabIndex = 2;
+            this.txt_Respuesta3.TabIndex = 5;
             this.txt_Respuesta3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_Respuesta2
@@ -275,7 +275,7 @@
             this.txt_Respuesta2.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Respuesta2.Name = "txt_Respuesta2";
             this.txt_Respuesta2.Size = new System.Drawing.Size(379, 33);
-            this.txt_Respuesta2.TabIndex = 1;
+            this.txt_Respuesta2.TabIndex = 4;
             this.txt_Respuesta2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_Respuesta1
@@ -294,7 +294,7 @@
             this.txt_Respuesta1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Respuesta1.Name = "txt_Respuesta1";
             this.txt_Respuesta1.Size = new System.Drawing.Size(379, 33);
-            this.txt_Respuesta1.TabIndex = 0;
+            this.txt_Respuesta1.TabIndex = 3;
             this.txt_Respuesta1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_Pregunta
@@ -313,7 +313,7 @@
             this.txt_Pregunta.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Pregunta.Name = "txt_Pregunta";
             this.txt_Pregunta.Size = new System.Drawing.Size(620, 33);
-            this.txt_Pregunta.TabIndex = 0;
+            this.txt_Pregunta.TabIndex = 1;
             this.txt_Pregunta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tabPage2
@@ -437,7 +437,7 @@
             this.cb_Materias.Location = new System.Drawing.Point(511, 61);
             this.cb_Materias.Name = "cb_Materias";
             this.cb_Materias.Size = new System.Drawing.Size(171, 30);
-            this.cb_Materias.TabIndex = 1;
+            this.cb_Materias.TabIndex = 0;
             this.cb_Materias.SelectedIndexChanged += new System.EventHandler(this.cb_Materias_SelectedIndexChanged);
             // 
             // lb_Codigo

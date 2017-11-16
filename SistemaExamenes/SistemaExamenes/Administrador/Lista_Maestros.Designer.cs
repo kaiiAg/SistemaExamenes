@@ -131,7 +131,7 @@
             this.dvg_Maestros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dvg_Maestros.RowTemplate.Height = 24;
             this.dvg_Maestros.Size = new System.Drawing.Size(640, 340);
-            this.dvg_Maestros.TabIndex = 6;
+            this.dvg_Maestros.TabIndex = 1;
             // 
             // btn_Buscar
             // 
@@ -164,7 +164,7 @@
             this.txt_NombreBus.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_NombreBus.Name = "txt_NombreBus";
             this.txt_NombreBus.Size = new System.Drawing.Size(331, 45);
-            this.txt_NombreBus.TabIndex = 4;
+            this.txt_NombreBus.TabIndex = 0;
             this.txt_NombreBus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tabPage2
@@ -222,7 +222,7 @@
             this.txt_NomMaestro.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_NomMaestro.Name = "txt_NomMaestro";
             this.txt_NomMaestro.Size = new System.Drawing.Size(245, 45);
-            this.txt_NomMaestro.TabIndex = 11;
+            this.txt_NomMaestro.TabIndex = 5;
             this.txt_NomMaestro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_idUsuario
@@ -288,7 +288,7 @@
             this.txt_ConfiContra.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_ConfiContra.Name = "txt_ConfiContra";
             this.txt_ConfiContra.Size = new System.Drawing.Size(245, 45);
-            this.txt_ConfiContra.TabIndex = 9;
+            this.txt_ConfiContra.TabIndex = 4;
             this.txt_ConfiContra.Text = "Contraseña";
             this.txt_ConfiContra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -308,7 +308,7 @@
             this.txt_Contraseña.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.Size = new System.Drawing.Size(245, 45);
-            this.txt_Contraseña.TabIndex = 8;
+            this.txt_Contraseña.TabIndex = 3;
             this.txt_Contraseña.Text = "Contraseña";
             this.txt_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_Contraseña.OnValueChanged += new System.EventHandler(this.txt_Contraseña_TextChanged);
@@ -329,7 +329,7 @@
             this.txt_Usuario.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(245, 45);
-            this.txt_Usuario.TabIndex = 7;
+            this.txt_Usuario.TabIndex = 2;
             this.txt_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tabPage3
@@ -420,7 +420,7 @@
             this.txt_NameMaestro.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_NameMaestro.Name = "txt_NameMaestro";
             this.txt_NameMaestro.Size = new System.Drawing.Size(295, 45);
-            this.txt_NameMaestro.TabIndex = 19;
+            this.txt_NameMaestro.TabIndex = 7;
             this.txt_NameMaestro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btn_BuscarMan
@@ -454,7 +454,7 @@
             this.txt_NomBusque.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_NomBusque.Name = "txt_NomBusque";
             this.txt_NomBusque.Size = new System.Drawing.Size(295, 45);
-            this.txt_NomBusque.TabIndex = 17;
+            this.txt_NomBusque.TabIndex = 6;
             this.txt_NomBusque.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lb_idUsuario

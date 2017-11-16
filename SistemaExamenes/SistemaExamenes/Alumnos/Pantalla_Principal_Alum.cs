@@ -65,7 +65,7 @@ namespace SistemaExamenes.Alumnos
 
         private void informaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Creadora: Karen Aguilar Garita\n Correo: karenaguilargarita@outlook.com\n" +
+            DialogResult dialogResult = MessageBox.Show("Desarrollador: Karen Aguilar Garita\n Correo: karenaguilargarita@outlook.com\n" +
                 "", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lista_Alumnos));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -117,19 +117,19 @@
             // 
             // dgv_Alumnos
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_Alumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Alumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Alumnos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgv_Alumnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Alumnos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Alumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Alumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Alumnos.DoubleBuffered = true;
             this.dgv_Alumnos.EnableHeadersVisualStyles = false;
@@ -140,7 +140,7 @@
             this.dgv_Alumnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Alumnos.RowTemplate.Height = 24;
             this.dgv_Alumnos.Size = new System.Drawing.Size(661, 386);
-            this.dgv_Alumnos.TabIndex = 4;
+            this.dgv_Alumnos.TabIndex = 1;
             // 
             // btn_Buscar
             // 
@@ -172,7 +172,7 @@
             this.txt_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(323, 33);
-            this.txt_Nombre.TabIndex = 2;
+            this.txt_Nombre.TabIndex = 0;
             this.txt_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tabPage2
@@ -235,7 +235,7 @@
             this.txt_NomAlumno.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NomAlumno.Name = "txt_NomAlumno";
             this.txt_NomAlumno.Size = new System.Drawing.Size(274, 33);
-            this.txt_NomAlumno.TabIndex = 12;
+            this.txt_NomAlumno.TabIndex = 6;
             this.txt_NomAlumno.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_IDUsuario
@@ -258,7 +258,7 @@
             this.cb_Grupo.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Grupo.Name = "cb_Grupo";
             this.cb_Grupo.Size = new System.Drawing.Size(195, 30);
-            this.cb_Grupo.TabIndex = 10;
+            this.cb_Grupo.TabIndex = 8;
             // 
             // cb_Grado
             // 
@@ -274,7 +274,7 @@
             this.cb_Grado.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Grado.Name = "cb_Grado";
             this.cb_Grado.Size = new System.Drawing.Size(193, 30);
-            this.cb_Grado.TabIndex = 9;
+            this.cb_Grado.TabIndex = 7;
             // 
             // cb_Maestro
             // 
@@ -283,7 +283,7 @@
             this.cb_Maestro.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Maestro.Name = "cb_Maestro";
             this.cb_Maestro.Size = new System.Drawing.Size(193, 30);
-            this.cb_Maestro.TabIndex = 7;
+            this.cb_Maestro.TabIndex = 5;
             // 
             // label7
             // 
@@ -358,7 +358,7 @@
             this.txt_Confirm_Contra.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Confirm_Contra.Name = "txt_Confirm_Contra";
             this.txt_Confirm_Contra.Size = new System.Drawing.Size(224, 33);
-            this.txt_Confirm_Contra.TabIndex = 8;
+            this.txt_Confirm_Contra.TabIndex = 4;
             this.txt_Confirm_Contra.Text = "Contraseña";
             this.txt_Confirm_Contra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -378,7 +378,7 @@
             this.txt_Contraseña.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.Size = new System.Drawing.Size(224, 33);
-            this.txt_Contraseña.TabIndex = 7;
+            this.txt_Contraseña.TabIndex = 3;
             this.txt_Contraseña.Text = "Contraseña";
             this.txt_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_Contraseña.OnValueChanged += new System.EventHandler(this.txt_Contraseña_TextChanged);
@@ -399,7 +399,7 @@
             this.txt_Usuario.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(224, 33);
-            this.txt_Usuario.TabIndex = 6;
+            this.txt_Usuario.TabIndex = 2;
             this.txt_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lb_Confirmacion
@@ -516,7 +516,7 @@
             this.txt_MaestroMan.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MaestroMan.Name = "txt_MaestroMan";
             this.txt_MaestroMan.Size = new System.Drawing.Size(294, 33);
-            this.txt_MaestroMan.TabIndex = 20;
+            this.txt_MaestroMan.TabIndex = 10;
             this.txt_MaestroMan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_NomBusque
@@ -535,7 +535,7 @@
             this.txt_NomBusque.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NomBusque.Name = "txt_NomBusque";
             this.txt_NomBusque.Size = new System.Drawing.Size(294, 33);
-            this.txt_NomBusque.TabIndex = 19;
+            this.txt_NomBusque.TabIndex = 9;
             this.txt_NomBusque.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lb_idUsuario
@@ -547,6 +547,7 @@
             this.lb_idUsuario.Size = new System.Drawing.Size(60, 24);
             this.lb_idUsuario.TabIndex = 18;
             this.lb_idUsuario.Text = "label3";
+            this.lb_idUsuario.Visible = false;
             // 
             // lb_idAlumno
             // 
@@ -569,7 +570,7 @@
             this.cb_GrupoMan.Margin = new System.Windows.Forms.Padding(4);
             this.cb_GrupoMan.Name = "cb_GrupoMan";
             this.cb_GrupoMan.Size = new System.Drawing.Size(212, 30);
-            this.cb_GrupoMan.TabIndex = 9;
+            this.cb_GrupoMan.TabIndex = 12;
             // 
             // cb_GradoMan
             // 
@@ -585,7 +586,7 @@
             this.cb_GradoMan.Margin = new System.Windows.Forms.Padding(4);
             this.cb_GradoMan.Name = "cb_GradoMan";
             this.cb_GradoMan.Size = new System.Drawing.Size(212, 30);
-            this.cb_GradoMan.TabIndex = 8;
+            this.cb_GradoMan.TabIndex = 11;
             // 
             // label8
             // 
