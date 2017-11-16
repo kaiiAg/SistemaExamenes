@@ -26,6 +26,7 @@ namespace SistemaExamenes.Maestro
         private void calificacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lista_Alumnos frm = new Lista_Alumnos();
+            frm.lb_ID.Text = lb_IdMaestro.Text;
             frm.Show();
         }
 

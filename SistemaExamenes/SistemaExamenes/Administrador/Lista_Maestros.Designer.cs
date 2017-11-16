@@ -220,7 +220,7 @@
             this.txt_NomMaestro.LineIdleColor = System.Drawing.Color.Gray;
             this.txt_NomMaestro.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txt_NomMaestro.LineThickness = 3;
-            this.txt_NomMaestro.Location = new System.Drawing.Point(36, 147);
+            this.txt_NomMaestro.Location = new System.Drawing.Point(36, 46);
             this.txt_NomMaestro.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txt_NomMaestro.Name = "txt_NomMaestro";
             this.txt_NomMaestro.Size = new System.Drawing.Size(245, 45);
@@ -230,7 +230,7 @@
             // txt_idUsuario
             // 
             this.txt_idUsuario.Enabled = false;
-            this.txt_idUsuario.Location = new System.Drawing.Point(36, 63);
+            this.txt_idUsuario.Location = new System.Drawing.Point(36, 164);
             this.txt_idUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txt_idUsuario.Name = "txt_idUsuario";
             this.txt_idUsuario.Size = new System.Drawing.Size(212, 28);

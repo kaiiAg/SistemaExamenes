@@ -89,6 +89,8 @@ namespace SistemaExamenes.Alumnos
                 } catch (Exception ex)
                 {
                     INSERTAR_NOTA();
+                    Close();
+                    
                 }
 
             }

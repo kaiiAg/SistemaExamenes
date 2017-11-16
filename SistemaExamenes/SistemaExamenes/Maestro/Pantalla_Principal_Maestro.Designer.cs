@@ -35,6 +35,7 @@
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lb_IdMaestro = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,6 +91,15 @@
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
+            // lb_IdMaestro
+            // 
+            this.lb_IdMaestro.AutoSize = true;
+            this.lb_IdMaestro.Location = new System.Drawing.Point(60, 56);
+            this.lb_IdMaestro.Name = "lb_IdMaestro";
+            this.lb_IdMaestro.Size = new System.Drawing.Size(60, 24);
+            this.lb_IdMaestro.TabIndex = 1;
+            this.lb_IdMaestro.Text = "label1";
+            // 
             // Pantalla_Principal_Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -97,6 +107,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1478, 899);
+            this.Controls.Add(this.lb_IdMaestro);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -120,5 +131,6 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elaborarExamenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calificacionesToolStripMenuItem;
+        public System.Windows.Forms.Label lb_IdMaestro;
     }
 }

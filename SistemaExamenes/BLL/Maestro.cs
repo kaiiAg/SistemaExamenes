@@ -21,6 +21,15 @@ namespace BLL
             set { _IdExamen = value; }
         }
 
+        private int _IdMaestro;
+
+        public int IdMaestro
+        {
+            get { return _IdMaestro; }
+            set { _IdMaestro = value; }
+        }
+
+
         private int _IdPregunta;
 
         public int IdPregunta
@@ -36,6 +45,23 @@ namespace BLL
             get { return _IdRespuesta; }
             set { _IdRespuesta = value; }
         }
+
+        private string _User;
+
+        public string User
+        {
+            get { return _User; }
+            set { _User = value; }
+        }
+
+        private string _Pass;
+
+        public string Pass
+        {
+            get { return _Pass; }
+            set { _Pass = value; }
+        }
+
 
         private string  _Pregunta;
 
@@ -376,7 +402,11 @@ namespace BLL
             else
             {
                 sql = "SP_SELECT_NOTAS_ALMNOS";
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@vidmaestro", SqlDbType.Int, _IdMaestro);
+                
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
 
                 if (numero_error != 0)
                 {
@@ -414,8 +444,10 @@ namespace BLL
             else
             {
                 sql = "SP_SELECT_NOTAS_ALMNOS_BUSQUEDA";
-                ParamStruct[] parametros = new ParamStruct[1];
+                ParamStruct[] parametros = new ParamStruct[2];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@vnombre", SqlDbType.VarChar, _Nombre);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@vidmaestro", SqlDbType.Int, _IdMaestro);
+
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
 
 
@@ -437,6 +469,59 @@ namespace BLL
             }
         }
 
+        public void ID_MAESTRO()
+        {
+            conexion = cls_DAL.trae_conexion("BDExamenes", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                sql = "SP_ERROR_INSERT";
+                ParamStruct[] parametros = new ParamStruct[2];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+
+            }
+            else
+            {
+                sql = "SP_SELECT_IDMAESTRO_USER_PASS";
+                ParamStruct[] parametros = new ParamStruct[2];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@vusuario", SqlDbType.NChar, _User);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@vpass", SqlDbType.NChar, _Pass);
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    sql = "SP_ERROR_INSERT";
+                    ParamStruct[] parametross = new ParamStruct[2];
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@msgerror", SqlDbType.VarChar, mensaje_error);
+                    cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@numerror", SqlDbType.Int, numero_error);
+                    cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                    cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        // _Status = Convert.ToInt32(ds.Tables[0].Rows[0]["status"]);
+                        _IdMaestro = Convert.ToInt32(ds.Tables[0].Rows[0]["idMaestro"]);
+
+
+                        cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("datos no encontrados", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+
+                    }
+
+
+                }
+            }
+        }
 
         #endregion
 

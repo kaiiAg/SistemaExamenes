@@ -42,6 +42,7 @@
             this.PuntosObtenidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Nombre = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btn_Buscar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lb_ID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -189,12 +190,22 @@
             this.btn_Buscar.Zoom = 10;
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
+            // lb_ID
+            // 
+            this.lb_ID.AutoSize = true;
+            this.lb_ID.Location = new System.Drawing.Point(596, 87);
+            this.lb_ID.Name = "lb_ID";
+            this.lb_ID.Size = new System.Drawing.Size(60, 24);
+            this.lb_ID.TabIndex = 4;
+            this.lb_ID.Text = "label1";
+            // 
             // Lista_Alumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(723, 575);
+            this.Controls.Add(this.lb_ID);
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Nombre);
             this.Controls.Add(this.dgv_Notas);
@@ -212,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Notas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Buscar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -230,5 +242,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txt_Nombre;
         private Bunifu.Framework.UI.BunifuImageButton btn_Buscar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label lb_ID;
     }
 }

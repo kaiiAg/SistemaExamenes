@@ -30,6 +30,7 @@ namespace SistemaExamenes.Maestro
         
         private void CARGAR_NOTAS()
         {
+            maes.IdMaestro = Convert.ToInt32(lb_ID.Text);
             dgv_Notas.DataSource = maes.MOSTRAR_NOTAS().Tables[0];
         }
 
@@ -43,6 +44,7 @@ namespace SistemaExamenes.Maestro
             if (txt_Nombre.Text != String.Empty)
             {
                 maes.Nombre = txt_Nombre.Text;
+                maes.IdMaestro = Convert.ToInt32(lb_ID.Text);
                 dgv_Notas.DataSource = maes.CARGAR_NOTAS_BUSQUEDA().Tables[0];
             }
             else

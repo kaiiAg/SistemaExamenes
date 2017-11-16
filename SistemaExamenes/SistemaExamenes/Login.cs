@@ -18,6 +18,7 @@ namespace SistemaExamenes
     {
         Acceso objlogin = new Acceso();
         BLL.Alumnos al = new BLL.Alumnos();
+        BLL.Maestro maes = new BLL.Maestro();
         public Login()
         {
             InitializeComponent();
@@ -52,6 +53,11 @@ namespace SistemaExamenes
             else if(objlogin.Tipo == 2)
             {
                 MessageBox.Show("Bienvenido: " + txt_Usuario.Text, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                maes.User = txt_Usuario.Text;
+                maes.Pass = txt_Contraseña.Text;
+                maes.ID_MAESTRO();
+                int id = maes.IdMaestro;
+                objmenuprincipal2.lb_IdMaestro.Text = Convert.ToString(id);
                 objmenuprincipal2.Show();
                 this.Hide();
 
