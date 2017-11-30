@@ -21,26 +21,40 @@ namespace SistemaExamenes.Alumnos
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Esta seguro de salir?", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
+                DialogResult dialogResult = MessageBox.Show("Esta seguro de salir?", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
 
-               
-                Close();
+
+                    Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            catch (Exception ex)
             {
-             
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void CARGAR_CODEXAMEN()
         {
-            DataSet ds;
-            al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
-            ds = al.CARGAR_CODEXAMEN();
-            cb_CodExamen.DataSource = ds.Tables[0];
-            cb_CodExamen.DisplayMember = ds.Tables[0].Columns["codigoExamen"].ColumnName.ToString();
+            try
+            {
+                DataSet ds;
+                al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
+                ds = al.CARGAR_CODEXAMEN();
+                cb_CodExamen.DataSource = ds.Tables[0];
+                cb_CodExamen.DisplayMember = ds.Tables[0].Columns["codigoExamen"].ColumnName.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Seleccionar_Examen_Load(object sender, EventArgs e)
@@ -59,45 +73,53 @@ namespace SistemaExamenes.Alumnos
 
         private void INSERT_RESPUESTAS()
         {
-            string dato = "";
-            int filaSeleccionada =
-                      dgv_Respuestas.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (filaSeleccionada == 1)
+            try
             {
-                foreach (DataGridViewRow rowPrincipal in dgv_Respuestas.SelectedRows)
+                string dato = "";
+                int filaSeleccionada =
+                          dgv_Respuestas.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                if (filaSeleccionada == 1)
                 {
-                    dato = (Convert.ToString(rowPrincipal.Cells["respuesta"].Value).ToString());
+                    foreach (DataGridViewRow rowPrincipal in dgv_Respuestas.SelectedRows)
+                    {
+                        dato = (Convert.ToString(rowPrincipal.Cells["respuesta"].Value).ToString());
+
+                    }
+                }
+
+                al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
+                al.Pregunta = lb_Pregunta.Text;
+                al.Respuesta = dato;
+                al.IdAlumno = Convert.ToInt32(lb_IdAlumno.Text);
+                al.CodExamen = cb_CodExamen.Text;
+                al.INSERT_RESPUESTAS_ALUMNOS();
+                if (al.Validacion == "Insertado")
+                {
+
+                    try
+                    {
+                        cb_IdPreguntaX.SelectedIndex += 1;
+                        MOSTRAR_PREGUNTA();
+                        MOSTRAR_RESPUESTA();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        INSERTAR_NOTA();
+                        Close();
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
-
-            al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
-            al.Pregunta = lb_Pregunta.Text;
-            al.Respuesta = dato;
-            al.IdAlumno = Convert.ToInt32(lb_IdAlumno.Text);
-            al.CodExamen = cb_CodExamen.Text;
-            al.INSERT_RESPUESTAS_ALUMNOS();
-            if (al.Validacion == "Insertado")
+            catch (Exception ex)
             {
-
-                try
-                {
-                    cb_IdPreguntaX.SelectedIndex += 1;
-                    MOSTRAR_PREGUNTA();
-                    MOSTRAR_RESPUESTA();
-
-                } catch (Exception ex)
-                {
-                    INSERTAR_NOTA();
-                    Close();
-                    
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -112,29 +134,50 @@ namespace SistemaExamenes.Alumnos
 
         private void CARGAR_IDPREGUNTA_X()
         {
-            DataSet ds;
-            al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
-            al.CodExamen = cb_CodExamen.Text;
-            al.Seccion = lb_SeccionX.Text;
-            ds = al.ID_PREGUNTA();
-            cb_IdPreguntaX.DataSource = ds.Tables[0];
-            cb_IdPreguntaX.DisplayMember = ds.Tables[0].Columns["idPregunta"].ColumnName.ToString();
-
+            try
+            {
+                DataSet ds;
+                al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
+                al.CodExamen = cb_CodExamen.Text;
+                al.Seccion = lb_SeccionX.Text;
+                ds = al.ID_PREGUNTA();
+                cb_IdPreguntaX.DataSource = ds.Tables[0];
+                cb_IdPreguntaX.DisplayMember = ds.Tables[0].Columns["idPregunta"].ColumnName.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
         private void MOSTRAR_PREGUNTA()
         {
-            al.IdPregunta = Convert.ToInt32(cb_IdPreguntaX.Text);
-            al.MOSTRAR_PREGUNTA();
-            lb_Pregunta.Text = al.Pregunta;
+            try
+            {
+                al.IdPregunta = Convert.ToInt32(cb_IdPreguntaX.Text);
+                al.MOSTRAR_PREGUNTA();
+                lb_Pregunta.Text = al.Pregunta;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void MOSTRAR_RESPUESTA()
         {
-            al.IdPregunta = Convert.ToInt32(cb_IdPreguntaX.Text);
+            try
+            {
+                al.IdPregunta = Convert.ToInt32(cb_IdPreguntaX.Text);
 
-            dgv_Respuestas.DataSource = al.MOSTRAR_RESPUESTA().Tables[0];
+                dgv_Respuestas.DataSource = al.MOSTRAR_RESPUESTA().Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -145,23 +188,30 @@ namespace SistemaExamenes.Alumnos
 
         private void INSERTAR_NOTA()
         {
-            al.IdAlumno = Convert.ToInt32(lb_IdAlumno.Text);
-            al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
-            al.CodExamen = cb_CodExamen.Text;
-            al.INSERT_NOTA_ALUMNO();
-            if (al.Validacion == "Insertado")
+            try
             {
-                MessageBox.Show("Felicitaciones has terminado el examen!!!", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-               
+                al.IdAlumno = Convert.ToInt32(lb_IdAlumno.Text);
+                al.IdExamen = Convert.ToInt32(lb_IdExamen.Text);
+                al.CodExamen = cb_CodExamen.Text;
+                al.INSERT_NOTA_ALUMNO();
+                if (al.Validacion == "Insertado")
+                {
+                    MessageBox.Show("Felicitaciones has terminado el examen!!!", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }        
-            else
+
+                }
+                else
+                {
+                    MessageBox.Show("Por favor Confirmar Contraseña", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Por favor Confirmar Contraseña", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show(ex.Message);
             }
 
-}
+        }
 
     }
 }

@@ -27,11 +27,18 @@ namespace SistemaExamenes.Maestro
         {
             CARGAR_NOTAS();
         }
-        
+
         private void CARGAR_NOTAS()
         {
-            maes.IdMaestro = Convert.ToInt32(lb_ID.Text);
-            dgv_Notas.DataSource = maes.MOSTRAR_NOTAS().Tables[0];
+            try
+            {
+                maes.IdMaestro = Convert.ToInt32(lb_ID.Text);
+                dgv_Notas.DataSource = maes.MOSTRAR_NOTAS().Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgv_ListaNotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -41,15 +48,22 @@ namespace SistemaExamenes.Maestro
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            if (txt_Nombre.Text != String.Empty)
+            try
             {
-                maes.Nombre = txt_Nombre.Text;
-                maes.IdMaestro = Convert.ToInt32(lb_ID.Text);
-                dgv_Notas.DataSource = maes.CARGAR_NOTAS_BUSQUEDA().Tables[0];
+                if (txt_Nombre.Text != String.Empty)
+                {
+                    maes.Nombre = txt_Nombre.Text;
+                    maes.IdMaestro = Convert.ToInt32(lb_ID.Text);
+                    dgv_Notas.DataSource = maes.CARGAR_NOTAS_BUSQUEDA().Tables[0];
+                }
+                else
+                {
+                    CARGAR_NOTAS();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                CARGAR_NOTAS();
+                MessageBox.Show(ex.Message);
             }
 
         }

@@ -13,7 +13,7 @@ namespace SistemaExamenes.Alumnos
 {
     public partial class Pantalla_Principal_Alum : Form
     {
-        
+
         BLL.Alumnos al = new BLL.Alumnos();
         BLL.Maestro maes = new BLL.Maestro();
         public Pantalla_Principal_Alum()
@@ -21,26 +21,39 @@ namespace SistemaExamenes.Alumnos
             InitializeComponent();
         }
 
-        
+
 
         private void CARGAR_MATERIAS()
         {
-            DataSet ds;
-            ds = maes.CARGA_MATERIAS();
-            cb_Materias.DataSource = ds.Tables[0];
-            cb_Materias.DisplayMember = ds.Tables[0].Columns["nombre"].ColumnName.ToString();
+            try
+            {
+                DataSet ds;
+                ds = maes.CARGA_MATERIAS();
+                cb_Materias.DataSource = ds.Tables[0];
+                cb_Materias.DisplayMember = ds.Tables[0].Columns["nombre"].ColumnName.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_Entrar_Click(object sender, EventArgs e)
         {
-            Seleccionar_Examen frm = new Seleccionar_Examen();
-            al.Nombre = cb_Materias.Text;
-            al.ID_EXAMEN();
-            int id = al.IdExamen;
-            frm.lb_IdExamen.Text = Convert.ToString(id);
-            frm.lb_IdAlumno.Text = lb_Id.Text;
-            frm.Show();
-
+            try
+            {
+                Seleccionar_Examen frm = new Seleccionar_Examen();
+                al.Nombre = cb_Materias.Text;
+                al.ID_EXAMEN();
+                int id = al.IdExamen;
+                frm.lb_IdExamen.Text = Convert.ToString(id);
+                frm.lb_IdAlumno.Text = lb_Id.Text;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Pantalla_Principal_Alum_Load(object sender, EventArgs e)
@@ -50,23 +63,37 @@ namespace SistemaExamenes.Alumnos
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Esta seguro de Cerrar Sesion", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
+                DialogResult dialogResult = MessageBox.Show("Esta seguro de Cerrar Sesion", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
 
-                Application.Restart();
+                    Application.Restart();
 
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void informaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Desarrollador: Karen Aguilar Garita\n Correo: karenaguilargarita@outlook.com\n" +
-                "", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Desarrollador: Karen Aguilar Garita\n Correo: karenaguilargarita@outlook.com\n" +
+                    "", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

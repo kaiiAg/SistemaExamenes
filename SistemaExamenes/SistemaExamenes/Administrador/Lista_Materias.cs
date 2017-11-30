@@ -25,41 +25,53 @@ namespace SistemaExamenes.Administrador
         }
         private void CARGA()
         {
-            dgv_Materias.DataSource = admin.CARGA_MATERIAS().Tables[0];
+            try
+            {
+                dgv_Materias.DataSource = admin.CARGA_MATERIAS().Tables[0];
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Lista_Materias_Load");
+            }
         }
 
         private void INSERTAR()
         {
-            if (txt_Materia.Text == String.Empty)
+            try
             {
-                MessageBox.Show("Ingrese Materia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Materia.Focus();
-                return;
-            }
-            else
-            {
-                
-                admin.Nombre = txt_Materia.Text;
-                admin.Secuencia = 1;
-                admin.INSERT_MATERIAS();
-                if (admin.Validacion == "Insertado")
+                if (txt_Materia.Text == String.Empty)
                 {
-                    MessageBox.Show("Materia Insertada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    txt_Materia.Text = String.Empty;
-                    CARGA();
-
+                    MessageBox.Show("Ingrese Materia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Materia.Focus();
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    admin.Nombre = txt_Materia.Text;
+                    admin.Secuencia = 1;
+                    admin.INSERT_MATERIAS();
+                    if (admin.Validacion == "Insertado")
+                    {
+                        MessageBox.Show("Materia Insertada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        txt_Materia.Text = String.Empty;
+                        CARGA();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
                 }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message + " INSERTAR");
             }
-            
 
 
-            
+
+
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)

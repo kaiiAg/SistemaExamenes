@@ -116,6 +116,7 @@
             this.Name = "Pantalla_Principal_Maestro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo Maestros";
+            this.Load += new System.EventHandler(this.Pantalla_Principal_Maestro_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

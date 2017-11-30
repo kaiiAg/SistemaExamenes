@@ -30,17 +30,31 @@ namespace SistemaExamenes.Maestro
 
         private void CARGAR_MATERIAS()
         {
-            DataSet ds;
-            ds = maes.CARGA_MATERIAS();
-            cb_Materias.DataSource = ds.Tables[0];
-            cb_Materias.DisplayMember = ds.Tables[0].Columns["nombre"].ColumnName.ToString();
+            try
+            {
+                DataSet ds;
+                ds = maes.CARGA_MATERIAS();
+                cb_Materias.DataSource = ds.Tables[0];
+                cb_Materias.DisplayMember = ds.Tables[0].Columns["nombre"].ColumnName.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CARGAR_CODEXAMEN()
         {
-            maes.Nombre = cb_Materias.Text;
-            maes.CARGA_CODEXAMEN();
-            lb_Codigo.Text = maes.CodExamen;
+            try
+            {
+                maes.Nombre = cb_Materias.Text;
+                maes.CARGA_CODEXAMEN();
+                lb_Codigo.Text = maes.CodExamen;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cb_Materias_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,288 +65,315 @@ namespace SistemaExamenes.Maestro
         private void btn_GuardarPregunta_Click(object sender, EventArgs e)
         {
             INSERT_PREGUNTA_MARCAR();
-            
+
         }
 
         private void INSERT_PREGUNTA_MARCAR()
         {
-            if (txt_Pregunta.Text == String.Empty)
+            try
             {
-                MessageBox.Show("Favor ingresar la pregunta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Pregunta.Focus();
-                return;
-            }
-            else
-            {
-
-                maes.Examen = cb_Materias.Text;
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.Seccion = "Marque con X";
-                maes.CodExamen = lb_Codigo.Text;
-                maes.INSERT_PREGUNTA();
-
-                if (maes.Validacion == "Insertado")
+                if (txt_Pregunta.Text == String.Empty)
                 {
-                   
-                    pn_Respuestas.Visible = true;
-                    txt_Pregunta.Enabled = false;
-                    btn_GuardarPregunta.Enabled = false;
-
+                    MessageBox.Show("Favor ingresar la pregunta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Pregunta.Focus();
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    maes.Examen = cb_Materias.Text;
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.Seccion = "Marque con X";
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.INSERT_PREGUNTA();
+
+                    if (maes.Validacion == "Insertado")
+                    {
+
+                        pn_Respuestas.Visible = true;
+                        txt_Pregunta.Enabled = false;
+                        btn_GuardarPregunta.Enabled = false;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             INSERT_RESPUESTAS_MARCA();
-            
+
 
         }
 
         private void INSERT_RESPUESTAS_MARCA()
         {
-            #region Validaciones
-            if (nu_PuntosMarque.Text == String.Empty)
+            try
             {
-                MessageBox.Show("Favor ingresar los puntos de la respuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                nu_PuntosMarque.Focus();
-                return;
+                #region Validaciones
+                if (nu_PuntosMarque.Text == String.Empty)
+                {
+                    MessageBox.Show("Favor ingresar los puntos de la respuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    nu_PuntosMarque.Focus();
+                    return;
+                }
+                else if (txt_Respuesta1.Text == String.Empty)
+                {
+                    MessageBox.Show("Favor ingresar la respuesta 1", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Pregunta.Focus();
+                    return;
+                }
+                else if (txt_Respuesta2.Text == String.Empty)
+                {
+                    MessageBox.Show("Favor ingresar la respuesta 2", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Pregunta.Focus();
+                    return;
+                }
+                else if (txt_Respuesta3.Text == String.Empty)
+                {
+                    MessageBox.Show("Favor ingresar la respuesta 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Pregunta.Focus();
+                    return;
+                }
+                else if (txt_Respuesta4.Text == String.Empty)
+                {
+                    MessageBox.Show("Favor ingresar la respuesta 4", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Pregunta.Focus();
+                    return;
+                }
+                else if (ck_Respuesta1.Checked == false && ck_Respuesta2.Checked == false && ck_Respuesta3.Checked == false && ck_Respuesta4.Checked == false)
+                {
+                    MessageBox.Show("Favor seleccionar con el check la respuesta correcta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                }
+                #endregion
+
+                if (ck_Respuesta1.Checked == true)
+                {
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta1.Text;
+                    maes.Puntos = Convert.ToDecimal(nu_PuntosMarque.Text);
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta2.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta3.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta4.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    if (maes.Validacion == "Insertado")
+                    {
+                        MessageBox.Show("Pregunta y respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LIMPIAR();
+                        pn_Respuestas.Visible = false;
+
+                        txt_Pregunta.Enabled = true;
+                        btn_GuardarPregunta.Enabled = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                else if (ck_Respuesta2.Checked == true)
+                {
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta1.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta2.Text;
+                    maes.Puntos = Convert.ToDecimal(nu_PuntosMarque.Text);
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta3.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta4.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    if (maes.Validacion == "Insertado")
+                    {
+                        MessageBox.Show("Respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LIMPIAR();
+                        pn_Respuestas.Visible = false;
+
+                        txt_Pregunta.Enabled = true;
+                        btn_GuardarPregunta.Enabled = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                else if (ck_Respuesta3.Checked == true)
+                {
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta1.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta2.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta3.Text;
+                    maes.Puntos = Convert.ToDecimal(nu_PuntosMarque.Text);
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta4.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    if (maes.Validacion == "Insertado")
+                    {
+                        MessageBox.Show("Respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LIMPIAR();
+                        pn_Respuestas.Visible = false;
+
+                        txt_Pregunta.Enabled = true;
+                        btn_GuardarPregunta.Enabled = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                else if (ck_Respuesta4.Checked == true)
+                {
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta1.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta2.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta3.Text;
+                    maes.Puntos = 0;
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    maes.Pregunta = txt_Pregunta.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_Respuesta4.Text;
+                    maes.Puntos = Convert.ToDecimal(nu_PuntosMarque.Text);
+                    maes.Seccion = "Marque con X";
+                    maes.INSERT_RESPUESTAS();
+
+                    if (maes.Validacion == "Insertado")
+                    {
+                        MessageBox.Show("Respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LIMPIAR();
+                        pn_Respuestas.Visible = false;
+
+                        txt_Pregunta.Enabled = true;
+                        btn_GuardarPregunta.Enabled = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
             }
-            else if (txt_Respuesta1.Text == String.Empty)
+            catch (Exception ex)
             {
-                MessageBox.Show("Favor ingresar la respuesta 1", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Pregunta.Focus();
-                return;
-            }else if (txt_Respuesta2.Text == String.Empty)
-            {
-                MessageBox.Show("Favor ingresar la respuesta 2", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Pregunta.Focus();
-                return;
-            }else if (txt_Respuesta3.Text == String.Empty)
-            {
-                MessageBox.Show("Favor ingresar la respuesta 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Pregunta.Focus();
-                return;
-            }else if (txt_Respuesta4.Text == String.Empty)
-            {
-                MessageBox.Show("Favor ingresar la respuesta 4", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Pregunta.Focus();
-                return;
-            }else if (ck_Respuesta1.Checked ==false && ck_Respuesta2.Checked==false && ck_Respuesta3.Checked==false && ck_Respuesta4.Checked == false)
-            {
-                MessageBox.Show("Favor seleccionar con el check la respuesta correcta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-                return;
+                MessageBox.Show(ex.Message);
             }
-            #endregion
-
-            if (ck_Respuesta1.Checked == true)
-            {
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta1.Text;
-                maes.Puntos = Convert.ToDecimal(nu_PuntosMarque.Text);
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta2.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta3.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta4.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                if (maes.Validacion == "Insertado")
-                {
-                    MessageBox.Show("Pregunta y respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    LIMPIAR();
-                    pn_Respuestas.Visible = false;
-                   
-                    txt_Pregunta.Enabled = true;
-                    btn_GuardarPregunta.Enabled = true;
-
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-            }else if (ck_Respuesta2.Checked == true)
-            {
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta1.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta2.Text;
-                maes.Puntos = Convert.ToDecimal(nu_PuntosMarque.Text);
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta3.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta4.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                if (maes.Validacion == "Insertado")
-                {
-                    MessageBox.Show("Respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    LIMPIAR();
-                    pn_Respuestas.Visible = false;
-                    
-                    txt_Pregunta.Enabled = true;
-                    btn_GuardarPregunta.Enabled = true;
-
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-            }else if (ck_Respuesta3.Checked == true)
-            {
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta1.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta2.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta3.Text;
-                maes.Puntos = Convert.ToDecimal(nu_PuntosMarque.Text);
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta4.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                if (maes.Validacion == "Insertado")
-                {
-                    MessageBox.Show("Respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    LIMPIAR();
-                    pn_Respuestas.Visible = false;
-                  
-                    txt_Pregunta.Enabled = true;
-                    btn_GuardarPregunta.Enabled = true;
-
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-            }else if (ck_Respuesta4.Checked == true)
-            {
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta1.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta2.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta3.Text;
-                maes.Puntos = 0;
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                maes.Pregunta = txt_Pregunta.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_Respuesta4.Text;
-                maes.Puntos = Convert.ToDecimal(nu_PuntosMarque.Text);
-                maes.Seccion = "Marque con X";
-                maes.INSERT_RESPUESTAS();
-
-                if (maes.Validacion == "Insertado")
-                {
-                    MessageBox.Show("Respuestas almacenadas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    LIMPIAR();
-                    pn_Respuestas.Visible = false;
-                    
-                    txt_Pregunta.Enabled = true;
-                    btn_GuardarPregunta.Enabled = true;
-
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-            }
-            
 
 
         }
 
         private void LIMPIAR()
         {
-            txt_Pregunta.Text = String.Empty;
-            txt_Respuesta1.Text = String.Empty;
-            txt_Respuesta2.Text = String.Empty;
-            txt_Respuesta3.Text = String.Empty;
-            txt_Respuesta4.Text = String.Empty;
-            ck_Respuesta1.Checked = false;
-            ck_Respuesta2.Checked = false;
-            ck_Respuesta3.Checked = false;
-            ck_Respuesta4.Checked = false;
-            nu_PuntosMarque.Text = "";
+            try
+            {
+                txt_Pregunta.Text = String.Empty;
+                txt_Respuesta1.Text = String.Empty;
+                txt_Respuesta2.Text = String.Empty;
+                txt_Respuesta3.Text = String.Empty;
+                txt_Respuesta4.Text = String.Empty;
+                ck_Respuesta1.Checked = false;
+                ck_Respuesta2.Checked = false;
+                ck_Respuesta3.Checked = false;
+                ck_Respuesta4.Checked = false;
+                nu_PuntosMarque.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_AgregarA_Click(object sender, EventArgs e)
@@ -343,37 +384,44 @@ namespace SistemaExamenes.Maestro
 
         private void INSERTAR_PREGUNTA_PAREO()
         {
-            if (txt_PareoA.Text == String.Empty)
+            try
             {
-                MessageBox.Show("Favor ingresar la pregunta de la columna A", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Pregunta.Focus();
-                return;
-            }
-            else
-            {
-
-                maes.Examen = cb_Materias.Text;
-                maes.Pregunta = txt_PareoA.Text;
-                maes.Seccion = "Pareo";
-                maes.CodExamen = lb_Codigo.Text;
-                maes.INSERT_PREGUNTA();
-
-                if (maes.Validacion == "Insertado")
+                if (txt_PareoA.Text == String.Empty)
                 {
-                    MessageBox.Show("Pregunta guardada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                    txt_PareoB.Enabled = true;
-                    btn_AceptarB.Enabled = true;
-                    txt_PareoA.Enabled = false;
-                    btn_AgregarA.Enabled = false;
-
+                    MessageBox.Show("Favor ingresar la pregunta de la columna A", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Pregunta.Focus();
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    maes.Examen = cb_Materias.Text;
+                    maes.Pregunta = txt_PareoA.Text;
+                    maes.Seccion = "Pareo";
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.INSERT_PREGUNTA();
+
+                    if (maes.Validacion == "Insertado")
+                    {
+                        MessageBox.Show("Pregunta guardada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        txt_PareoB.Enabled = true;
+                        btn_AceptarB.Enabled = true;
+                        txt_PareoA.Enabled = false;
+                        btn_AgregarA.Enabled = false;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -381,85 +429,114 @@ namespace SistemaExamenes.Maestro
         private void btn_AceptarB_Click(object sender, EventArgs e)
         {
             INSERTAR_REPUESTA_PAREO();
-            
+
         }
 
         private void INSERTAR_REPUESTA_PAREO()
         {
-            if (txt_PareoB.Text == String.Empty)
+            try
             {
-                MessageBox.Show("Favor ingresar la respuesta de la columna B", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Pregunta.Focus();
-                return;
-            }else if (nu_PuntosPareo.Text == String.Empty)
-            {
-                MessageBox.Show("Favor ingresar los puntos de la respuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                nu_PuntosPareo.Focus();
-                return;
-            }
-            else
-            {
-                maes.Pregunta = txt_PareoA.Text;
-                maes.CodExamen = lb_Codigo.Text;
-                maes.Respuesta = txt_PareoB.Text;
-                maes.Puntos = Convert.ToDecimal(nu_PuntosPareo.Text);
-                maes.Seccion = "Pareo";
-                maes.INSERT_RESPUESTAS();
-                if (maes.Validacion == "Insertado")
+                if (txt_PareoB.Text == String.Empty)
                 {
-                    MessageBox.Show("Respuesta guardada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    txt_PareoB.Enabled = false;
-                    btn_AceptarB.Enabled = false;
-                    txt_PareoA.Enabled = true;
-                    btn_AgregarA.Enabled = true;
-                    LIMPIAR1();
-
-                 
-                    
-
+                    MessageBox.Show("Favor ingresar la respuesta de la columna B", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Pregunta.Focus();
+                    return;
+                }
+                else if (nu_PuntosPareo.Text == String.Empty)
+                {
+                    MessageBox.Show("Favor ingresar los puntos de la respuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    nu_PuntosPareo.Focus();
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    maes.Pregunta = txt_PareoA.Text;
+                    maes.CodExamen = lb_Codigo.Text;
+                    maes.Respuesta = txt_PareoB.Text;
+                    maes.Puntos = Convert.ToDecimal(nu_PuntosPareo.Text);
+                    maes.Seccion = "Pareo";
+                    maes.INSERT_RESPUESTAS();
+                    if (maes.Validacion == "Insertado")
+                    {
+                        MessageBox.Show("Respuesta guardada Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        txt_PareoB.Enabled = false;
+                        btn_AceptarB.Enabled = false;
+                        txt_PareoA.Enabled = true;
+                        btn_AgregarA.Enabled = true;
+                        LIMPIAR1();
+
+
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
 
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
 
         private void LIMPIAR1()
         {
-            txt_PareoA.Text = String.Empty;
-            txt_PareoB.Text = String.Empty;
-            nu_PuntosPareo.Text = "";
+            try
+            {
+                txt_PareoA.Text = String.Empty;
+                txt_PareoB.Text = String.Empty;
+                nu_PuntosPareo.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Recuerde Guardar antes de salir, esta seguro de Salir?", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                
+                DialogResult dialogResult = MessageBox.Show("Recuerde Guardar antes de salir, esta seguro de Salir?", "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
 
-                Close();
+
+                    Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            catch (Exception ex)
             {
-               
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btn_GuardarTodo_Click(object sender, EventArgs e)
         {
-            LIMPIAR();
-            LIMPIAR1();
-            maes.Nombre = cb_Materias.Text;
-            maes.ACTUALIZA_SECUENCIA_EXAMEN();
-            CARGAR_CODEXAMEN();
-            MessageBox.Show("Examen Guardado", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                LIMPIAR();
+                LIMPIAR1();
+                maes.Nombre = cb_Materias.Text;
+                maes.ACTUALIZA_SECUENCIA_EXAMEN();
+                CARGAR_CODEXAMEN();
+                MessageBox.Show("Examen Guardado", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
